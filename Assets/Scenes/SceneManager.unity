@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f311c78ce45c5c4ab125791e63e5c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 1670520746}
+  pauseMenu: {fileID: 1670520746}
 --- !u!114 &440383822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 440383819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea1c71b9901d3c4c9ef5622550e8a21, type: 3}
+  m_Script: {fileID: 11500000, guid: e76b535b2ac342749bd5656274fd6f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &612228230
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 825781085}
   - component: {fileID: 825781084}
   m_Layer: 0
-  m_Name: Button (2)
+  m_Name: Quit to desktop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,8 +354,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 200, y: 30}
+  m_AnchoredPosition: {x: 0, y: -75}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &825781084
 MonoBehaviour:
@@ -504,7 +504,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Continue game
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -637,7 +639,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MAIN MENU
+  m_text: PAUSE MENU
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -770,7 +772,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Quit to main menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -860,7 +862,7 @@ GameObject:
   - component: {fileID: 1191256910}
   - component: {fileID: 1191256909}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -883,8 +885,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 200, y: 30}
+  m_AnchoredPosition: {x: 0, y: 75}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1191256909
 MonoBehaviour:
@@ -928,7 +930,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1191256910}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1670520746}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 440383821}
+        m_MethodName: FlipPauseBool
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1191256910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,7 +1003,7 @@ GameObject:
   - component: {fileID: 1542080031}
   - component: {fileID: 1542080030}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: Quit to menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,7 +1027,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 30}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542080030
 MonoBehaviour:
@@ -1047,7 +1071,41 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1542080031}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4280528189625340165, guid: 28b85760d292b094088f7dcefa3f1767,
+          type: 3}
+        m_MethodName: LoadMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 440383821}
+        m_MethodName: FlipPauseBool
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1670520746}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1542080031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1199,7 +1257,7 @@ GameObject:
   - component: {fileID: 1670520747}
   m_Layer: 0
   m_Name: PauseMenu
-  m_TagString: Main Menu
+  m_TagString: Pause Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
