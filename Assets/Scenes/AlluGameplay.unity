@@ -1089,7 +1089,7 @@ GameObject:
   - component: {fileID: 708379540}
   - component: {fileID: 708379539}
   m_Layer: 0
-  m_Name: GoToMissionButton (1)
+  m_Name: GoToMissionButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour
         {
         for (int y = grid.GetHeight() - 1; y >= 0; y--)
             {
-                Debug.Log("Y: " + y);
+                // Debug.Log("Y: " + y);
                 Instantiate(grid.GetValue(x, y), GetWorldPosition(x, y) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("Inventory").transform);
             }
         }

@@ -52,12 +52,18 @@ public class CameraController : MonoBehaviour
             {
                 MoveToCaseFile();
             }
-            else if(Input.GetKeyDown(KeyCode.D))
+            else if(Input.GetKeyDown(KeyCode.D) && game_status != gameState.incoming_mission)
             {
                 MoveToItems();
             }
         }
     }
+
+    internal void StartNewMission()
+    {
+        current_mission = Missions.GetRandomMission();
+    }
+
     public void MoveToCaseFile()
     {
         StopAllCoroutines();
@@ -116,23 +122,24 @@ public class CameraController : MonoBehaviour
     {
         HideAgent();
         MoveToCaseFile();
-        game_status = gameState.mission_debriefing;
         FaxMissionReport();
     }
 
     public void FaxMissionReport()
     {
-        // TODO: Trigger animation for fax and make it clickable
+        // TODO: Trigger animation for fax
+        game_status = gameState.mission_debriefing;
     }
 
 
-    void HideAgent()
+    public void HideAgent()
     {
-        // TODO
+        agentSprite.SetActive(false);
     }
 
-    void ShowAgent()
+    public void ShowAgent()
     {
-        // TODO
+        Debug.Log("activate agent sprite!");
+        agentSprite.SetActive(true);
     }
 }
