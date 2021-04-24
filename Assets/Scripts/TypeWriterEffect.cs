@@ -120,6 +120,8 @@ public class TypeWriterEffect : MonoBehaviour
             startButton.SetActive(true);*/
         
         yield return new WaitForSeconds(delayAfterSentence);
+        text.text = "";
+        yield return null;
     }
     public void CallChangeText()
     {

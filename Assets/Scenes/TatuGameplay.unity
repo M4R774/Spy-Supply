@@ -396,6 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc86bd85854a8d74a89427586726bf4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot: {fileID: 0}
   prefabs:
   - {fileID: 8589870101738490585, guid: f21d78999d493694f901d04b9143facd, type: 3}
   - {fileID: 5618591289331174259, guid: 62c0b14f84ce260458cd6867ae75def1, type: 3}
@@ -2069,6 +2070,7 @@ MonoBehaviour:
   agentItemsPos: 14
   game_status: 0
   current_mission: {fileID: 0}
+  test_add_item_to_luggage: {fileID: 0}
 --- !u!114 &1182686545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2099,7 +2101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AssetsPPU: 16
   m_RefResolutionX: 320
-  m_RefResolutionY: 240
+  m_RefResolutionY: 180
   m_UpscaleRT: 0
   m_PixelSnapping: 0
   m_CropFrameX: 0
