@@ -33,11 +33,11 @@ public class CameraController : MonoBehaviour
     // Game/mission status
     public gameState game_status;
     public Mission current_mission;
-
-    public GameObject test_add_item_to_luggage;
     public SoundEffectsController sound_effect_controller;
 
-    void Start()
+    public GameObject agentInventory;
+
+  void Start()
     {
         cam = Camera.main;
         flipX = agentSprite.GetComponent<SpriteRenderer>().flipX;
@@ -63,6 +63,9 @@ public class CameraController : MonoBehaviour
 
     internal void StartNewMission()
     {
+        foreach(GameObject item in current_mission.luggage) {
+            Destroy(item);
+        }
         current_mission = Missions.GetRandomMission();
     }
 
@@ -126,10 +129,9 @@ public class CameraController : MonoBehaviour
     public void SendAgentToMission()
     {
         HideAgent();
-        current_mission.AddItemToLuggage(test_add_item_to_luggage);
         MoveToCaseFile();
         FaxMissionReport();
-    }
+  }
 
     public void FaxMissionReport()
     {

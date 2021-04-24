@@ -30,7 +30,7 @@ public class AgentAi : MonoBehaviour
     }
     public void AgentEnters()
     {
-        transform.position = new Vector3 (transform.position.x, 0.5f, transform.transform.position.z);
+        transform.position = new Vector3 (transform.position.x, -1f, transform.transform.position.z);
         animator.SetBool("isWalking", true);
         spriteRenderer.color = new Color32(255,255,255,0);
 
@@ -61,7 +61,7 @@ public class AgentAi : MonoBehaviour
         float timeElapsed = 0;
         float newPos;
         float startPos = transform.position.y;
-        float endPos = 2.5f;
+        float endPos = 0.5f;
 
         while(timeElapsed < agentSpeed)
         {

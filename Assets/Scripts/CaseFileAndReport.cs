@@ -53,7 +53,7 @@ public class CaseFileAndReport : MonoBehaviour
         camera_controller.ShowAgent();
         camera_controller.StartNewMission();
         sound_effect_controller.PlayPaperSound();
-        RemoveOldReport();
+        // RemoveOldReport();
     }
 
     private void RemoveOldReport()
