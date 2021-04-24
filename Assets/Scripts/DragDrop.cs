@@ -28,7 +28,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
 
   public void OnEndDrag(PointerEventData eventData)
   {
-    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    Vector3 mousePos = Input.mousePosition;
     RaycastHit hit;
     Physics.Raycast(transform.position + new Vector3(0, 0, -1), transform.TransformDirection(Vector3.forward), out hit, 10f);
     GameObject collidedObject;
@@ -37,10 +37,10 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
       Debug.Log("Collided with " + collidedObject.name);
       if (!collidedObject.name.Contains("Slot"))
       {
-        eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
+        // eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
       }
     } else {
-      eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
+      // eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
     }
     
     Debug.Log("Ended drag");
