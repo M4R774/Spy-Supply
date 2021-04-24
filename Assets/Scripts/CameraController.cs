@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Uses a coroutine to move camera x.position to show one of the wanted screens.
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Camera cam;
@@ -15,10 +16,9 @@ public class CameraController : MonoBehaviour
     {
        cam = Camera.main;
     }
-
-    // Update is called once per frame
     void Update()
     {
+        // For debugging
         if(Input.GetKeyDown(KeyCode.S))
         {
             MoveToCaseFile();
