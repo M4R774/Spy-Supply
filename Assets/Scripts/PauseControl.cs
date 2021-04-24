@@ -57,4 +57,8 @@ public class PauseControl : MonoBehaviour
     {
         gameIsPaused = !gameIsPaused;
     }
+    public void SetTimeScaleToNormal()
+    {
+        Time.timeScale = 1;
+    }
 }
