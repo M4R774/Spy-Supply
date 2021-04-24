@@ -1,0 +1,24 @@
+{
+    "title": "Mayday, Mayday!",
+
+    "casefile_description": "A friendly agency lost their experimental flying aircraft over Siberian tundra. The aircraft must be found and recovered before hostile actors can get their hands on it!",
+    
+    "difficulty": 4,
+
+    "win_result": "Travelling by helicopter, snowmobile and finally foot, our agent found the weird, crashed saucer. Steaming grey goo surrounded the vehicle but had completely disappeared by the time our agent had dragged the UFO-remains to nearest friendly base. $BEST_ITEM served its purpose.",
+
+    "loss_result": "Horrible snowstorms had gathered over the crash zone. We quickly lost signal with our agent. Later in the spring, the UFO-remains were gone and $WORST_ITEM was found hanging on top of a stick.",
+
+    "modifiers": {
+        "military_helmet": -3,
+        "goggles": 2,
+        "radio": 2,
+        "sturdy_boots": 3,
+        "snowshoes": 3,
+        "camo_pants": 1,
+        "sniper_scope": 1,
+        "poison_pill": 0,
+        "salt_shaker": 0,
+        "cross-country_skis": 3
+    }
+}
