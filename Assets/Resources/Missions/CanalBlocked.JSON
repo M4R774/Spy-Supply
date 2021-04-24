@@ -10,15 +10,15 @@
     "loss_result": "Our agent was caught trying to bribe and official with $WORT_ITEM and was promptly escorted out of the target country. Disappointing, clearly more anti-corruption training is needed for our personnel.",
 
     "modifiers": {
-        "military_helmet": 0,
-        "goggles": 0,
-        "radio": 0,
-        "sturdy_boots": 0,
-        "snowshoes": 0,
-        "camo_pants": 0,
-        "sniper_scope": 0,
-        "poison_pill": 0,
-        "salt_shaker": 0,
-        "cross-country_skis": 0
+        "military_helmet": 1,
+        "goggles": 1,
+        "radio": 1,
+        "sturdy_boots": 2,
+        "snowshoes": -2,
+        "camo_pants": 1,
+        "sniper_scope": -1,
+        "poison_pill": -2,
+        "salt_shaker": 2,
+        "cross-country_skis": -2
     }
 }
