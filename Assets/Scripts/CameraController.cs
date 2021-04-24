@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Uses a coroutine to move camera x.position to show one of the wanted screens.
+// Use S and D to move between views
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Camera cam;
     [SerializeField] private float caseFilePos;
     [SerializeField] private float itemsPos;
-    [SerializeField] private float reportsPos;
+    //[SerializeField] private float reportsPos;
     [SerializeField] private float cameraSpeed;
     [SerializeField] private Coroutine thisCoroutine;
 
@@ -27,10 +28,10 @@ public class CameraController : MonoBehaviour
         {
             MoveToItems();
         }
-        else if(Input.GetKeyDown(KeyCode.A))
+        /*else if(Input.GetKeyDown(KeyCode.A))
         {
             MoveToReports();
-        }
+        }*/
     }
     public void MoveToCaseFile()
     {
@@ -44,12 +45,12 @@ public class CameraController : MonoBehaviour
         thisCoroutine = null;
         thisCoroutine = StartCoroutine(MoveCamera(cam.transform.position.x, itemsPos));
     }
-    public void MoveToReports()
+    /*public void MoveToReports()
     {
         StopAllCoroutines();
         thisCoroutine = null;
         thisCoroutine = StartCoroutine(MoveCamera(cam.transform.position.x, reportsPos));
-    }
+    }*/
 
     IEnumerator MoveCamera(float startPos, float endPos)
     {
