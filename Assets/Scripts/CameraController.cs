@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum gameState
+public enum gameState
 {
     incoming_mission,
     mission_preparation,
@@ -31,7 +31,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Coroutine agentCoroutine;
 
     // Game/mission status
-    private gameState game_status;
+    public gameState game_status;
     public Mission current_mission;
 
     void Start()

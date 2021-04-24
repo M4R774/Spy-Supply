@@ -13,6 +13,13 @@ public class ReportFileController : MonoBehaviour
     TextMeshProUGUI header_text;
     TextMeshProUGUI body_text;
 
+    void Awake()
+    {
+        camera_controller = cameraObject.GetComponent<CameraController>();
+        header_text = header.GetComponent<TextMeshProUGUI>();
+        body_text = body.GetComponent<TextMeshProUGUI>();
+    }
+
     public void ResolveMission()
     {
         bool mission_success = camera_controller.current_mission.CalculateAndGetMissionResult();
@@ -25,12 +32,7 @@ public class ReportFileController : MonoBehaviour
             header_text.text = "MISSION FAILED";
         }
         body_text.text = camera_controller.current_mission.GetMissionResultText(mission_success);
-    }
 
-    void Awake()
-    {
-        camera_controller = cameraObject.GetComponent<CameraController>();
-        header_text = header.GetComponent<TextMeshProUGUI>();
-        body_text = body.GetComponent<TextMeshProUGUI>();
+        // TODO: Give option to choose reward
     }
 }
