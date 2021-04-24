@@ -15,7 +15,7 @@ public class Mission : MonoBehaviour
   private const int LUGGAGE_MAX_SIZE = 3;
 
   // Player input
-  public List<GameObject> luggage;
+  public List<GameObject> luggage = new List<GameObject>();
 
     // Mission outcome
     public List<GameObject> reward_items;
@@ -66,6 +66,59 @@ public class Mission : MonoBehaviour
             SumOfModifiers() * difficulty / (2 * max_difficulty) / 
             (max_modifier * max_items);
         return odds >= Random.Range(0, 1);
+    }
+
+
+    public string GetBestItem()
+    {
+        int BestItemModifier = - max_modifier;
+        string BestItemName = "defaultBestItem";
+
+        foreach(GameObject item_object in luggage)
+        {
+            Item item = item_object.GetComponent<Item>();
+            string name = item.GetName();
+            item_modifiers.TryGetValue(name, out int modifier);
+
+            if (modifier >= BestItemModifier) {
+                BestItemName = name;
+                BestItemModifier = modifier;
+            }
+
+        }
+        return BestItemName;
+    }
+
+    public string GetWorstItem()
+    {
+        int WorstItemModifier = - max_modifier;
+        string WorstItemName = "defaultWorstItem";
+
+        foreach(GameObject item_object in luggage)
+        {
+            Item item = item_object.GetComponent<Item>();
+            string name = item.GetName();
+            item_modifiers.TryGetValue(name, out int modifier);
+
+            if (modifier >= WorstItemModifier) {
+                WorstItemName = name;
+                WorstItemModifier = modifier;
+            }
+
+        }
+        return WorstItemName;
+    }
+
+    public string GetMissionResultText()
+    {
+        int result = 0;
+
+        if (result == 1) {
+            return win_result.Replace("$BEST_ITEM", GetBestItem()).Replace("$WORST_ITEM", GetWorstItem());
+        } else {
+            return loss_result.Replace("$BEST_ITEM", GetBestItem()).Replace("$WORST_ITEM", GetWorstItem());
+        }
+        
     }
 
     public int SumOfModifiers()
