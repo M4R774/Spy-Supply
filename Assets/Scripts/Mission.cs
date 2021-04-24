@@ -52,11 +52,19 @@ public class Mission : MonoBehaviour
 
     public void AddItemToLuggage(GameObject item_to_be_added)
     {
-    if (luggage.Count < max_items)
-    {
-        luggage.Add(item_to_be_added);
+        if (luggage.Count < max_items)
+        {
+            luggage.Add(item_to_be_added);
+        }
     }
-  }
+
+    public void RemoveItemFromLuggage(GameObject item_to_be_removed)
+    {
+        if (luggage.Contains(item_to_be_removed))
+        {
+            luggage.Remove(item_to_be_removed);
+        }
+    }
 
     public bool CalculateAndGetMissionResult()
     {
