@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    string name;
-    string description;
+    public string name;
+    [TextArea(15,20)]
+    public string description;
 
     Item(string name_parameter, string description_parameter)
     {
