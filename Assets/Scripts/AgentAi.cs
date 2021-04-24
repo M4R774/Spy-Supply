@@ -30,6 +30,7 @@ public class AgentAi : MonoBehaviour
     }
     public void AgentEnters()
     {
+        transform.position = new Vector3 (transform.position.x, 0.5f, transform.transform.position.z);
         animator.SetBool("isWalking", true);
         spriteRenderer.color = new Color32(255,255,255,0);
 

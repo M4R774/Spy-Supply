@@ -40,7 +40,6 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-        agentPosY = agentSprite.transform.position.y;
         flipX = agentSprite.GetComponent<SpriteRenderer>().flipX;
 
         // Init mission
@@ -106,6 +105,7 @@ public class CameraController : MonoBehaviour
     }
     IEnumerator MoveAgent(float startPos, float endPos, bool flip)
     {
+        agentPosY = agentSprite.transform.position.y;
         float timeElapsed = 0;
         float newPos = 0;
         while(timeElapsed < cameraSpeed)
