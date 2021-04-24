@@ -1,0 +1,24 @@
+{
+    "title": "Ailment in the Archives",
+
+    "casefile_description": "Our clerks discovered lately that old files have gone missing in the archives. Is it something ominous or just messy bookkeeping? Better investigate.",
+    
+    "difficulty": 1,
+
+    "win_result": "It was tedious work, but our agent managed to connect the dots and uncovered a grand scheme of corruption: Janitor had sold access to the archive and high-profile targets had took advantage of it. Armed with $BEST_ITEM, our agent took out the dirty laundry.",
+
+    "loss_result": "After tracking down a path of shred paper up and down the narrow corridors, you find a bored cat atop an empty shelf. It found $BEST_ITEM interesting enough, however, and you managed to lure it back up.",
+
+    "modifiers": {
+        "military_helmet": 0,
+        "goggles": 0,
+        "radio": 0,
+        "sturdy_boots": 0,
+        "snowshoes": 0,
+        "camo_pants": 0,
+        "sniper_scope": 0,
+        "poison_pill": 0,
+        "salt_shaker": 0,
+        "cross-country_skis": 0
+    }
+}

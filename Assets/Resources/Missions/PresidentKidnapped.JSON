@@ -1,0 +1,24 @@
+{
+    "title": "Presidential threat",
+
+    "casefile_description": "Disturbing call from the Whitehouse: The president is under a great threat, they say. Kidnapped?! Godspeed, agent.",
+    
+    "difficulty": 1,
+
+    "win_result": "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. You and your $BEST_ITEM appered sharp, however, and Mr. President was impressed",
+
+    "loss_result": "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. You and your $WORST_ITEM boarded the next flight home with a soda in hand.",
+
+    "modifiers": {
+        "military_helmet": 1,
+        "goggles": 1,
+        "radio": 1,
+        "sturdy_boots": 1,
+        "snowshoes": 1,
+        "camo_pants": 1,
+        "sniper_scope": 1,
+        "poison_pill": -3,
+        "salt_shaker": -2,
+        "cross-country_skis": -2
+    }
+}
