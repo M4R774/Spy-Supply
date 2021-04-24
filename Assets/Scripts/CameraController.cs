@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         // For debugging
-        if(Input.GetKeyDown(KeyCode.S))
+        if(Input.GetKeyDown(KeyCode.A))
         {
             MoveToCaseFile();
         }
