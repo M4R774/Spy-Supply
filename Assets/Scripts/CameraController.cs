@@ -55,7 +55,7 @@ public class CameraController : MonoBehaviour
         cameraCoroutine = StartCoroutine(MoveCamera(cam.transform.position.x, caseFilePos));
 
         agentCoroutine = null;
-        agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentCaseFilePos));
+        agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentCaseFilePos, true));
     }
 
     public void MoveToItems()
@@ -65,7 +65,7 @@ public class CameraController : MonoBehaviour
         cameraCoroutine = StartCoroutine(MoveCamera(cam.transform.position.x, itemsPos));
 
         agentCoroutine = null;
-        agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentItemsPos));
+        agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentItemsPos, false));
     }
     /*public void MoveToReports()
     {
@@ -89,7 +89,7 @@ public class CameraController : MonoBehaviour
         cam.transform.position = new Vector3(newPos,0,0);
         yield return null;
     }
-    IEnumerator MoveAgent(float startPos, float endPos)
+    IEnumerator MoveAgent(float startPos, float endPos, bool flip)
     {
         float timeElapsed = 0;
         float newPos = 0;
@@ -102,7 +102,7 @@ public class CameraController : MonoBehaviour
         }
         newPos = endPos;
         agentSprite.transform.position = new Vector3(newPos,agentPosY,0);
-        agentSprite.GetComponent<SpriteRenderer>().flipX = !flipX;
+        agentSprite.GetComponent<SpriteRenderer>().flipX = flip;
         flipX = agentSprite.GetComponent<SpriteRenderer>().flipX;
 
         yield return null;
