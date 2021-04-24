@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Goggles
-  description: 'Goggles protecting your eyes. Very helpful in sandstorms. '
+  description: asd
 --- !u!222 &2326147405381502575
 CanvasRenderer:
   m_ObjectHideFlags: 0

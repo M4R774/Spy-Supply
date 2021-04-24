@@ -117,6 +117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: item_helmet
       objectReference: {fileID: 0}
+    - target: {fileID: 6954642333067911727, guid: 71f8a35ecd589504480132e9d965f700,
+        type: 3}
+      propertyPath: description
+      value: Helmet for your head! You know, the place your brain lives in.
+      objectReference: {fileID: 0}
     - target: {fileID: 8515890613398154247, guid: 71f8a35ecd589504480132e9d965f700,
         type: 3}
       propertyPath: m_Sprite
