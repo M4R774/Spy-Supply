@@ -15,8 +15,7 @@ public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     }
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Dragging");
-        GetComponent<RectTransform>().anchoredPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        GetComponent<RectTransform>().anchoredPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 1, 0);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -31,20 +30,20 @@ public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit hit;
-        Physics.Raycast(transform.position + new Vector3(0, 0, -1), transform.TransformDirection(Vector3.forward), out hit, 10f);
-        GameObject collidedObject;
+        Physics.Raycast(transform.position + new Vector3(0, 0, -1), transform.TransformDirection(Vector3.forward), out hit, 100f);
+    GameObject collidedObject;
         if (hit.collider != null)
         {
-        collidedObject = hit.collider.gameObject;
-        Debug.Log("Collided with " + collidedObject.name);
-        if (!collidedObject.name.Contains("Slot"))
-        {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
-        }
+            collidedObject = hit.collider.gameObject;
+            Debug.Log("Collided with " + collidedObject.name);
+            if (!collidedObject.name.Contains("Slot"))
+            {
+                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
+            }
         }
         else
         {
-        eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
         }
 
         Debug.Log("Ended drag");

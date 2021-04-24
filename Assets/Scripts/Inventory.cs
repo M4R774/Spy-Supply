@@ -5,8 +5,9 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     Grid2D<GameObject> grid;
+  public GameObject slot;
 
-    public List<GameObject> prefabs;
+  public List<GameObject> prefabs;
     int dragValue;
 
     int value;
@@ -19,7 +20,7 @@ public class Inventory : MonoBehaviour
         {
         for (int y = grid.GetHeight() - 1; y >= 0; y--)
             {
-                // Debug.Log("Y: " + y);
+                Instantiate(slot, GetWorldPosition(x, y) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("InventorySlots").transform);
                 Instantiate(grid.GetValue(x, y), GetWorldPosition(x, y) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("Inventory").transform);
             }
         }
