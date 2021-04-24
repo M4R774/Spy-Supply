@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26764a15f3b83642a341ce5db9d2191, type: 3}
+  m_Name: KoboltMines
+  m_EditorClassIdentifier: 
+  title: 
+  caseFileDescription: 
+  difficulty: 0
+  winResult: 
+  lossResult: 
+  military_helmet: 0
+  goggles: 0
+  radio: 0
+  sturdy_boots: 0
+  snowshoes: 0
+  camo_pants: 0
+  sniper_scope: 0
+  poison_pill: 0
+  salt_shaker: 0
+  cross_country_skis: 0
