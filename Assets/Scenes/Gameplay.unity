@@ -796,6 +796,9 @@ MonoBehaviour:
     type: 3}
   paperAudioClip: {fileID: 8300000, guid: 4219a5d24ecd6a44eb4ed986be82f03d, type: 3}
   footstepAudioClip: {fileID: 8300000, guid: e34545459bde8ac46b39ad11460c86e1, type: 3}
+  briefingAudioClip: {fileID: 8300000, guid: 8b489abf2f01913418ae0c242ccc4a5e, type: 3}
+  greetingAudioClip: {fileID: 8300000, guid: 065339b227da5bf44942f9b57551dd71, type: 3}
+  byebyeAudioClip: {fileID: 8300000, guid: 492b691d7be1e8f48984cb8dcb0fa413, type: 3}
 --- !u!4 &364867010
 Transform:
   m_ObjectHideFlags: 0
@@ -2316,9 +2319,8 @@ MonoBehaviour:
   agentItemsPos: 14
   game_status: 0
   current_mission: {fileID: 0}
-  test_add_item_to_luggage: {fileID: 5755795155068078777, guid: 17c77476f183be24f89ee469843d4792,
-    type: 3}
   sound_effect_controller: {fileID: 364867009}
+  agentInventory: {fileID: 0}
 --- !u!114 &1182686545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2433,7 +2435,7 @@ Transform:
   m_GameObject: {fileID: 1251804946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6, y: 2.5, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 498502632}
   m_Father: {fileID: 0}

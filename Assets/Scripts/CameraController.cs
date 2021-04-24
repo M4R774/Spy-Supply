@@ -21,7 +21,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float cameraSpeed;
     [SerializeField] private Coroutine cameraCoroutine;
     public bool canMove = true;
-
     [Space(10)]
     // Agent sprite stuff
     [SerializeField] private GameObject agentSprite;
@@ -30,25 +29,21 @@ public class CameraController : MonoBehaviour
     private float agentPosY;
     private bool flipX;
     [SerializeField] private Coroutine agentCoroutine;
-    [SerializeField] private AgentAi agentAi;
-    [SerializeField] private Canvas agentSpeechCanvas;
 
-    [Space(10)]
     // Game/mission status
     public gameState game_status;
     public Mission current_mission;
-    public GameObject test_add_item_to_luggage;
     public SoundEffectsController sound_effect_controller;
 
-    void Start()
+    public GameObject agentInventory;
+
+  void Start()
     {
         cam = Camera.main;
         flipX = agentSprite.GetComponent<SpriteRenderer>().flipX;
 
         // Init mission
         current_mission = Missions.GetRandomMission();
-
-        agentAi = agentSprite.GetComponent<AgentAi>();
     }
     void Update()
     {
@@ -68,6 +63,9 @@ public class CameraController : MonoBehaviour
 
     internal void StartNewMission()
     {
+        foreach(GameObject item in current_mission.luggage) {
+            Destroy(item);
+        }
         current_mission = Missions.GetRandomMission();
     }
 
@@ -80,8 +78,6 @@ public class CameraController : MonoBehaviour
 
         agentCoroutine = null;
         agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentCaseFilePos, true));
-
-        //agentSpeechCanvas.transform.position = new Vector3(-3f, agentSpeechCanvas.transform.position.y, agentSpeechCanvas.transform.position.z);
     }
 
     public void MoveToItems()
@@ -93,8 +89,6 @@ public class CameraController : MonoBehaviour
 
         agentCoroutine = null;
         agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentItemsPos, false));
-
-        //agentSpeechCanvas.transform.position = new Vector3(3f, agentSpeechCanvas.transform.position.y, agentSpeechCanvas.transform.position.z);
     }
 
     IEnumerator MoveCamera(float startPos, float endPos)
@@ -135,10 +129,9 @@ public class CameraController : MonoBehaviour
     public void SendAgentToMission()
     {
         HideAgent();
-        current_mission.AddItemToLuggage(test_add_item_to_luggage);
         MoveToCaseFile();
         FaxMissionReport();
-    }
+  }
 
     public void FaxMissionReport()
     {
@@ -150,14 +143,13 @@ public class CameraController : MonoBehaviour
 
     public void HideAgent()
     {
-        //agentSprite.SetActive(false);
-        agentAi.AgentExits();
+        sound_effect_controller.PlayByeByeSound();
+        agentSprite.SetActive(false);
     }
 
     public void ShowAgent()
     {
-        Debug.Log("activate agent sprite!");
+        sound_effect_controller.PlayGreetingSound();
         agentSprite.SetActive(true);
-        agentAi.AgentEnters();
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IDropHandler
+public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     CanvasGroup group;
     Vector3 originalPosition;
@@ -39,23 +39,18 @@ public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
             GameObject.Find("agent_temp").GetComponent<AgentAi>().AgentBarks();
             if (!collidedObject.name.Contains("Slot"))
             {
-                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
+                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition + new Vector3(0, 1, 0);
             }
         }
         else
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition + new Vector3(0, 1, 0);
         }
 
-        Debug.Log("Ended drag");
         group.blocksRaycasts = true;
         group.alpha = 1f;
     }
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        Debug.Log("Ended drag");
-    }
     public string name;
     [TextArea(5,10)]
     public string description;

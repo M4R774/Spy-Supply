@@ -30,31 +30,19 @@ public class AgentAi : MonoBehaviour
     }
     public void AgentEnters()
     {
-        transform.position = new Vector3 (transform.position.x, 0.5f, transform.transform.position.z);
+        transform.position = new Vector3 (transform.position.x, -1f, transform.transform.position.z);
         animator.SetBool("isWalking", true);
         spriteRenderer.color = new Color32(255,255,255,0);
 
-        Color32 enterColor = new Color (255,255,255,255);
-        agentColorCoroutine = StartCoroutine(AgentColor(enterColor));
-        agentPosCoroutine = StartCoroutine(AgentPos(2.5f, true));
+        agentColorCoroutine = StartCoroutine(AgentColor());
+        agentPosCoroutine = StartCoroutine(AgentPos());
     }
-    public void AgentExits()
-    { 
-        animator.SetBool("isWalking", true);
-        Color32 exitColor = new Color (255,255,255,0);  
-        agentColorCoroutine = StartCoroutine(AgentColor(exitColor));
-        agentPosCoroutine = StartCoroutine(AgentPos(0.5f, false));
-    }
-    public void AgentBarks()
-    {
-        typeWriterEffect.CallBarkText();
-    }
-    IEnumerator AgentColor(Color32 endingColor)
+    IEnumerator AgentColor()
     {
         float timeElapsed = 0;
         Color32 newColor;
         Color32 startColor = spriteRenderer.color;
-        Color32 endColor = endingColor;
+        Color32 endColor = new Color (255,255,255,255);
 
         while( timeElapsed < agentSpeed)
         {
@@ -68,14 +56,12 @@ public class AgentAi : MonoBehaviour
         agentColorCoroutine = null;
         yield return null;
     }
-    IEnumerator AgentPos(float endingPos, bool entering)
+    IEnumerator AgentPos()
     {
-        if(!entering)
-             typeWriterEffect.CallExitText();
         float timeElapsed = 0;
         float newPos;
         float startPos = transform.position.y;
-        float endPos = endingPos;
+        float endPos = 0.5f;
 
         while(timeElapsed < agentSpeed)
         {
@@ -87,8 +73,7 @@ public class AgentAi : MonoBehaviour
         transform.position = new Vector3(transform.position.x, endPos, transform.position.z);
         agentPosCoroutine = null;
         yield return new WaitForSeconds(2f);
-        if(entering)
-            typeWriterEffect.CallEnterText();
+        typeWriterEffect.CallChangeText();
         yield return null;
     }
 }

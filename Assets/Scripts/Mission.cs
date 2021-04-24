@@ -81,9 +81,10 @@ public class Mission : MonoBehaviour
         string BestItemName = "defaultBestItem";
 
         foreach(GameObject item_object in luggage)
-        {
+        {   
             Item item = item_object.GetComponent<Item>();
             string name = item.GetName();
+            Debug.Log("Item name" + name);
             item_modifiers.TryGetValue(name, out int modifier);
 
             if (modifier >= BestItemModifier) {
