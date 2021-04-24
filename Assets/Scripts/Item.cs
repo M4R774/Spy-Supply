@@ -31,7 +31,7 @@ public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit hit;
         Physics.Raycast(transform.position + new Vector3(0, 0, -1), transform.TransformDirection(Vector3.forward), out hit, 100f);
-    GameObject collidedObject;
+        GameObject collidedObject;
         if (hit.collider != null)
         {
             collidedObject = hit.collider.gameObject;
