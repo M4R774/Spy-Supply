@@ -2319,8 +2319,8 @@ MonoBehaviour:
   agentItemsPos: 14
   game_status: 0
   current_mission: {fileID: 0}
-  test_add_item_to_luggage: {fileID: 0}
   sound_effect_controller: {fileID: 364867009}
+  agentInventory: {fileID: 0}
 --- !u!114 &1182686545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2435,7 +2435,7 @@ Transform:
   m_GameObject: {fileID: 1251804946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6, y: 2.5, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 498502632}
   m_Father: {fileID: 0}
