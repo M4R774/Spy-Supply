@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pause Menu
+  - CaseFile
   layers:
   - Default
   - TransparentFX
