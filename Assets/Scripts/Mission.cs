@@ -13,7 +13,7 @@ public class Mission : MonoBehaviour
     public Dictionary<string, int> item_modifiers;
 
     // Player input
-    public List<GameObject> luggage;
+    public List<GameObject> luggage = new List<GameObject>();
 
     // Mission outcome
     public List<GameObject> reward_items;
