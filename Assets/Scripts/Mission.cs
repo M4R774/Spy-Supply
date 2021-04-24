@@ -13,10 +13,10 @@ public class Mission : MonoBehaviour
     public Dictionary<string, int> item_modifiers;
 
     // Player input
-    public List<string> luggage; // TODO: change from List<string> to List<item>
+    public List<GameObject> luggage;
 
     // Mission outcome
-    public List<string> reward_items; // TODO: change from List<string> to List<item>
+    public List<GameObject> reward_items;
 
     public Mission(string title_parameter, 
         string description_parameter, 
@@ -49,7 +49,7 @@ public class Mission : MonoBehaviour
         reward_items.Clear();
     }
 
-    public void AddItemToLuggage(string item_to_be_added)
+    public void AddItemToLuggage(GameObject item_to_be_added)
     {
         luggage.Add(item_to_be_added);
     }
