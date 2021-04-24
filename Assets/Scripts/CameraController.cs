@@ -12,26 +12,37 @@ public class CameraController : MonoBehaviour
     //[SerializeField] private float reportsPos;
     [SerializeField] private float cameraSpeed;
     [SerializeField] private Coroutine thisCoroutine;
-
+    public bool canMove = true;
+    [Space(10)]
+    // Agent sprite stuff
+    [SerializeField] private GameObject agentSprite;
+    private float agentPosY;
+    private bool flipX;
     void Start()
     {
        cam = Camera.main;
+       agentPosY = agentSprite.transform.position.y;
+       flipX = agentSprite.GetComponent<SpriteRenderer>().flipX;
+
     }
     void Update()
     {
-        // For debugging
-        if(Input.GetKeyDown(KeyCode.A))
+        if(canMove)
         {
-            MoveToCaseFile();
+            // For debugging
+            if(Input.GetKeyDown(KeyCode.A))
+            {
+                MoveToCaseFile();
+            }
+            else if(Input.GetKeyDown(KeyCode.D))
+            {
+                MoveToItems();
+            }
+            /*else if(Input.GetKeyDown(KeyCode.A))
+            {
+                MoveToReports();
+            }*/
         }
-        else if(Input.GetKeyDown(KeyCode.D))
-        {
-            MoveToItems();
-        }
-        /*else if(Input.GetKeyDown(KeyCode.A))
-        {
-            MoveToReports();
-        }*/
     }
     public void MoveToCaseFile()
     {
@@ -60,11 +71,17 @@ public class CameraController : MonoBehaviour
         {
             newPos = Mathf.Lerp(startPos, endPos, timeElapsed/cameraSpeed);
             cam.transform.position = new Vector3(newPos,0,0);
+            agentSprite.transform.position = new Vector3(newPos,agentPosY,0);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
         newPos = endPos;
         cam.transform.position = new Vector3(newPos,0,0);
+
+        agentSprite.transform.position = new Vector3(newPos,agentPosY,0);
+        agentSprite.GetComponent<SpriteRenderer>().flipX = !flipX;
+        flipX = agentSprite.GetComponent<SpriteRenderer>().flipX;
+        
         yield return null;
     }
 }
