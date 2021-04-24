@@ -17,6 +17,15 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("Gameplay");
-        
+    }
+    public void LoadWin()
+    {
+        SceneManager.LoadSceneAsync("Win", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("Gameplay");
+    }
+    public void LoadFailed()
+    {
+        SceneManager.LoadSceneAsync("Failed", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("Gameplay");
     }
 }

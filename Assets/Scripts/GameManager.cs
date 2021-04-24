@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 {
     private bool atGameStart = true; // Has the game started for the first time
     [SerializeField] bool skipToGameplay = false;
+    [SerializeField] SceneLoader sceneLoader;
+    public int numberOfWonMissions = 0;
+    public int numberOfFailedMissions = 0;
     void Awake()
     {
         //Init();
@@ -20,7 +23,14 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        if(numberOfWonMissions == 3)
+        {
+            sceneLoader.LoadWin();
+        }
+        if(numberOfFailedMissions == 3)
+        {
+            sceneLoader.LoadFailed();
+        }
     }
     void Init() // This is called when the game first starts. Can later be used to reset game if modified.
     {
