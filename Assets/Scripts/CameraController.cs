@@ -10,7 +10,7 @@ enum gameState
     mission_debriefing
 }
 
-// Uses a coroutine to move camera x.position to show one of the wanted screens.
+// Uses a coroutine to move cameraObject x.position to show one of the wanted screens.
 // Use S and D to move between views.
 // Also handles moving the agent sprite.
 public class CameraController : MonoBehaviour
