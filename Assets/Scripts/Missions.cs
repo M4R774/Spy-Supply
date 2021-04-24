@@ -4,14 +4,11 @@ using UnityEngine;
 
 public static class Missions
 {
-    public static List<Mission> missions;
+    public static List<Mission> missions = new List<Mission>();
 
     static Missions()
     {
-        Mission mission = new Mission();
-        missions.Add(mission);
-
-        mission = new Mission(
+        Mission mission = new Mission(
             "Rumble In The Jungle",
             "Our sources tell disturbing news from the deep jungle. Foreign intelligence agencies have sold guns to the enemies of our allies. Intercept the next shipment!",
             2,
@@ -58,6 +55,6 @@ public static class Missions
 
     public static Mission GetRandomMission()
     {
-        return missions[Random.Range(0, missions.Count - 1)];
+        return missions[Random.Range(0, missions.Count)];
     }
 }

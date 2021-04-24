@@ -38,8 +38,6 @@ public class Mission : MonoBehaviour
         win_result = win_result_parameter;
         loss_result = loss_result_parameter;
         item_modifiers = item_modifiers_parameter;
-        luggage.Clear();
-        reward_items.Clear();
     }
 
     
@@ -52,8 +50,6 @@ public class Mission : MonoBehaviour
         win_result = "VOITIT PELIN!";
         loss_result = "hävisit pelin :(";
         item_modifiers = new Dictionary<string, int>();  // empty
-        luggage.Clear();
-        reward_items.Clear();
     }
 
     public void AddItemToLuggage(GameObject item_to_be_added)
