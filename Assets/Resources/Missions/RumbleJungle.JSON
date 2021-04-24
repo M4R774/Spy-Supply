@@ -1,0 +1,24 @@
+{
+    "title": "Rumble In The Jungle",
+
+    "casefile_description": "Our sources tell disturbing news from the deep jungle. Foreign intelligence agencies have sold guns to the enemies of our allies. Intercept the next shipment!",
+    
+    "difficulty": 2,
+
+    "win_result": "Our agent tracked down and disarmed the arms dealers! $ITEM proved to be especially helpful. Local people were conflicted but they had no say in the matter.",
+
+    "loss_result": "Few months later, lone traveller brings news that a foreigner had disappeared in bushes after a firefight. Only $ITEM had been found...",
+
+    "modifiers": {
+        "military_helmet": 2,
+        "goggles": 0,
+        "radio": 1,
+        "sturdy_boots": 1,
+        "snowshoes": -3,
+        "camo_pants": 2,
+        "sniper_scope": 2,
+        "poison_pill": -3,
+        "salt_shaker": -2,
+        "cross-country_skis": -3
+    }
+}

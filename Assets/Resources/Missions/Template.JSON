@@ -1,0 +1,24 @@
+{
+    "title": "",
+
+    "casefile_description": "",
+    
+    "difficulty": ,
+
+    "win_result": "",
+
+    "loss_result": "",
+
+    "modifiers": {
+        "military_helmet": 0,
+        "goggles": 0,
+        "radio": 0,
+        "sturdy_boots": 0,
+        "snowshoes": 0,
+        "camo_pants": 0,
+        "sniper_scope": 0,
+        "poison_pill": 0,
+        "salt_shaker": 0,
+        "cross-country_skis": 0
+    }
+}

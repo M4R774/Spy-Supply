@@ -1,0 +1,24 @@
+{
+    "title": "Miners deep in trouble!",
+
+    "casefile_description": "A large cobalt mine in Kongo has collapsed! Several miners are trapped (and rare metal production halted). Search and rescue!",
+    
+    "difficulty": 2,
+
+    "win_result": "Great success! Our agent managed to squeeze in through the rubble and delivered supplies until the cave was cleared. $BEST_ITEM was surprisingly helpful.",
+
+    "loss_result": "Oh no! Our agent got in too late because of a failed $BEST_ITEM and the miners had already suffocated. However, this was only a minor inconvenience and electric car battery industry soon recovered.",
+
+    "modifiers": {
+        "military_helmet": 0,
+        "goggles": 3,
+        "radio": 3,
+        "sturdy_boots": 1,
+        "snowshoes": -3,
+        "camo_pants": 0,
+        "sniper_scope": -1,
+        "poison_pill": -3,
+        "salt_shaker": -1,
+        "cross-country_skis": -3
+    }
+}
