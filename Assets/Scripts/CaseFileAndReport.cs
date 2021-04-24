@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,34 +9,45 @@ public class CaseFileAndReport : MonoBehaviour
 {
     [SerializeField] private GameObject openedCaseFile;
     [SerializeField] private GameObject openedReport;
-    [SerializeField] private Camera cam;
+    private CameraController camera_controller;
     void Start()
     {
-        cam = Camera.main;
+        camera_controller = Camera.main.GetComponent<CameraController>();
     }
 
-    void Update()
-    {
-        
-    }
     public void ShowCaseFile()
     {
         openedCaseFile.SetActive(true);
-        cam.GetComponent<CameraController>().canMove = false;
+        camera_controller.canMove = false;
     }
     public void HideCaseFile()
     {
         openedCaseFile.SetActive(false);
-        cam.GetComponent<CameraController>().canMove = true;
+        camera_controller.canMove = true;
     }
     public void ShowReport()
     {
-        openedReport.SetActive(true);
-        cam.GetComponent<CameraController>().canMove = false;
+        if (camera_controller.game_status == gameState.mission_debriefing)
+        {
+            openedReport.SetActive(true);
+            camera_controller.canMove = false;
+        }
+        ReportFileController report_file_controller = openedReport.GetComponentInChildren<ReportFileController>();
+        report_file_controller.ResolveMission();
     }
     public void HideReport()
     {
         openedReport.SetActive(false);
-        cam.GetComponent<CameraController>().canMove = true;
+        camera_controller.canMove = true;
+        RemoveOldReport();
+        camera_controller.game_status = gameState.incoming_mission;
+        // TODO give new mission? Or maybe this should be done in the casefilecontroller?
+    }
+
+    private void RemoveOldReport()
+    {
+        // TODO change the sprite of the fax machine and make it
+        // not clickable
+        throw new NotImplementedException();
     }
 }

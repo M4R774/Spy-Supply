@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum gameState
+public enum gameState
 {
     incoming_mission,
     mission_preparation,
     mission_debriefing
 }
 
-// Uses a coroutine to move camera x.position to show one of the wanted screens.
+// Uses a coroutine to move cameraObject x.position to show one of the wanted screens.
 // Use S and D to move between views.
 // Also handles moving the agent sprite.
 public class CameraController : MonoBehaviour
@@ -31,7 +31,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Coroutine agentCoroutine;
 
     // Game/mission status
-    private gameState game_status;
+    public gameState game_status;
     public Mission current_mission;
 
     void Start()

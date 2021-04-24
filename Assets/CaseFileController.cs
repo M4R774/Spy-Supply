@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class CaseFileController : MonoBehaviour
 {
-    public GameObject camera;
+    public GameObject cameraObject;
     public GameObject header;
     public GameObject body;
     
     void Awake()
     {
-        CameraController camera_controller = camera.GetComponent<CameraController>();
+        CameraController camera_controller = cameraObject.GetComponent<CameraController>();
         
         TextMeshProUGUI header_text = header.GetComponent<TextMeshProUGUI>();
         header_text.text = camera_controller.current_mission.title;
