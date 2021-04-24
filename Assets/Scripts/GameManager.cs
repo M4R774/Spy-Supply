@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private bool atGameStart = true; // Has the game started for the first time
+    [SerializeField] bool skipToGameplay = false;
     void Awake()
     {
         //Init();
@@ -26,15 +27,30 @@ public class GameManager : MonoBehaviour
         if(atGameStart)
         {
             atGameStart = false;
-            Scene gamePlayScene = SceneManager.GetSceneByName("Gameplay");
-            if (gamePlayScene.isLoaded) // If for some reason the Gameplay scene been loaded, let's unload it
-            {
-                SceneManager.UnloadSceneAsync("Gameplay");
-            }
             Scene scene = SceneManager.GetSceneByName("MainMenu");
-            if (!scene.isLoaded) // If for some reason the scene has not been loaded, let's do so
+            Scene gamePlayScene = SceneManager.GetSceneByName("Gameplay");
+
+            if(!skipToGameplay)
             {
-                SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
+                if (gamePlayScene.isLoaded) // If for some reason the Gameplay scene been loaded, let's unload it
+                {
+                    SceneManager.UnloadSceneAsync("Gameplay");
+                }
+                if (!scene.isLoaded) // If for some reason the scene has not been loaded, let's do so
+                {
+                    SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
+                }
+            }
+            else
+            {
+                if (!gamePlayScene.isLoaded) // If for some reason the Gameplay scene been loaded, let's unload it
+                {
+                    SceneManager.LoadSceneAsync("Gameplay", LoadSceneMode.Additive);
+                }
+                if (scene.isLoaded) // If for some reason the scene has not been loaded, let's do so
+                {
+                    SceneManager.UnloadSceneAsync("MainMenu");
+                }
             }
         }
     }
