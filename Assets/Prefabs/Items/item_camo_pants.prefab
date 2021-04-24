@@ -119,6 +119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6954642333067911727, guid: 71f8a35ecd589504480132e9d965f700,
         type: 3}
+      propertyPath: name
+      value: Camo pants
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954642333067911727, guid: 71f8a35ecd589504480132e9d965f700,
+        type: 3}
       propertyPath: description
       value: Camo pants hide you well in forested areas. And parks I guess.
       objectReference: {fileID: 0}

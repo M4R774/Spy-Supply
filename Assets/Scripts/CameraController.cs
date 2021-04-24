@@ -1,6 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+enum gameState
+{
+    incoming_mission,
+    mission_preparation,
+    mission_debriefing
+}
 
 // Uses a coroutine to move camera x.position to show one of the wanted screens.
 // Use S and D to move between views.
@@ -21,13 +29,19 @@ public class CameraController : MonoBehaviour
     private float agentPosY;
     private bool flipX;
     [SerializeField] private Coroutine agentCoroutine;
+
+    // Game/mission status
+    private gameState game_status;
+    public Mission current_mission;
+
     void Start()
     {
-       cam = Camera.main;
+        cam = Camera.main;
+        agentPosY = agentSprite.transform.position.y;
+        flipX = agentSprite.GetComponent<SpriteRenderer>().flipX;
 
-       agentPosY = agentSprite.transform.position.y;
-       flipX = agentSprite.GetComponent<SpriteRenderer>().flipX;
-
+        // Init mission
+        current_mission = Missions.GetRandomMission();
     }
     void Update()
     {
@@ -96,5 +110,29 @@ public class CameraController : MonoBehaviour
         flipX = agentSprite.GetComponent<SpriteRenderer>().flipX;
 
         yield return null;
+    }
+
+    public void SendAgentToMission()
+    {
+        HideAgent();
+        MoveToCaseFile();
+        game_status = gameState.mission_debriefing;
+        FaxMissionReport();
+    }
+
+    public void FaxMissionReport()
+    {
+        // TODO: Trigger animation for fax and make it clickable
+    }
+
+
+    void HideAgent()
+    {
+        // TODO
+    }
+
+    void ShowAgent()
+    {
+        // TODO
     }
 }
