@@ -2005,6 +2005,8 @@ MonoBehaviour:
   agentItemsPos: 14
   game_status: 0
   current_mission: {fileID: 0}
+  test_add_item_to_luggage: {fileID: 5755795155068078777, guid: 17c77476f183be24f89ee469843d4792,
+    type: 3}
 --- !u!114 &1182686545
 MonoBehaviour:
   m_ObjectHideFlags: 0

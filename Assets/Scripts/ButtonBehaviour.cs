@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class ButtonBehaviour : MonoBehaviour {
+   public GameObject test_item;
    int resolveMission(float randNum, double odds){
       if (randNum <= odds) return 1;
       else return 0;
@@ -25,7 +26,16 @@ public class ButtonBehaviour : MonoBehaviour {
       // double odds = 0.82;
       
       int result = resolveMission(Random.Range(0f,1f), odds);
-      Debug.Log("Outcome odds are " + odds + " and result was " + result);
+      // Debug.Log("Outcome odds are " + odds + " and result was " + result);
+
+      // string worst_item = "goggles";
+      // string filled_text = $"Hello {worst_item}";
+      // Debug.Log(filled_text);
+
+      Mission x = Missions.GetRandomMission();
+      x.AddItemToLuggage(test_item);
+      bool wewon = true;
+      Debug.Log(x.GetMissionResultText(wewon));
    }
 
 }

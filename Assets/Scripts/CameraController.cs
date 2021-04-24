@@ -34,6 +34,8 @@ public class CameraController : MonoBehaviour
     public gameState game_status;
     public Mission current_mission;
 
+    public GameObject test_add_item_to_luggage;
+
     void Start()
     {
         cam = Camera.main;
@@ -121,6 +123,7 @@ public class CameraController : MonoBehaviour
     public void SendAgentToMission()
     {
         HideAgent();
+        current_mission.AddItemToLuggage(test_add_item_to_luggage);
         MoveToCaseFile();
         FaxMissionReport();
     }
