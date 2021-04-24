@@ -141,12 +141,13 @@ public class CameraController : MonoBehaviour
 
     public void HideAgent()
     {
+        sound_effect_controller.PlayByeByeSound();
         agentSprite.SetActive(false);
     }
 
     public void ShowAgent()
     {
-        Debug.Log("activate agent sprite!");
+        sound_effect_controller.PlayGreetingSound();
         agentSprite.SetActive(true);
     }
 }

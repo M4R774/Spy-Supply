@@ -26,6 +26,7 @@ public class CaseFileAndReport : MonoBehaviour
         if (camera_controller.game_status == gameState.incoming_mission)
         {
             camera_controller.game_status = gameState.mission_preparation;
+            sound_effect_controller.PlayMissionBriefingSound();
         }
     }
     public void HideCaseFile()
