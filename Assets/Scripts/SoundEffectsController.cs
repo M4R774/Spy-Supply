@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ public class SoundEffectsController : MonoBehaviour
     [SerializeField] AudioClip incomingFaxAudioClip;
     [SerializeField] AudioClip paperAudioClip;
     [SerializeField] AudioClip footstepAudioClip;
+    [SerializeField] AudioClip briefingAudioClip;
+    [SerializeField] AudioClip greetingAudioClip;
+    [SerializeField] AudioClip byebyeAudioClip;
 
     void Start()
     {
@@ -37,5 +41,19 @@ public class SoundEffectsController : MonoBehaviour
     {
         audioSource.clip = incomingFaxAudioClip;
         audioSource.PlayDelayed(2);
+    }
+
+    public void PlayMissionBriefingSound()
+    {
+        audioSource.PlayOneShot(briefingAudioClip);
+    }
+
+    public void PlayGreetingSound()
+    {
+        audioSource.PlayOneShot(greetingAudioClip);
+    }
+    public void PlayByeByeSound()
+    {
+        audioSource.PlayOneShot(byebyeAudioClip);
     }
 }

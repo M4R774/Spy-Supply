@@ -794,8 +794,11 @@ MonoBehaviour:
     type: 3}
   incomingFaxAudioClip: {fileID: 8300000, guid: 949e8bfa42b1ce947ad086d342c5a7e0,
     type: 3}
-  paperAudioClip: {fileID: 8300000, guid: dd998c248c8341f49a2bd7ceb3f581b3, type: 3}
+  paperAudioClip: {fileID: 8300000, guid: 4219a5d24ecd6a44eb4ed986be82f03d, type: 3}
   footstepAudioClip: {fileID: 8300000, guid: e34545459bde8ac46b39ad11460c86e1, type: 3}
+  briefingAudioClip: {fileID: 8300000, guid: 8b489abf2f01913418ae0c242ccc4a5e, type: 3}
+  greetingAudioClip: {fileID: 8300000, guid: 065339b227da5bf44942f9b57551dd71, type: 3}
+  byebyeAudioClip: {fileID: 8300000, guid: 492b691d7be1e8f48984cb8dcb0fa413, type: 3}
 --- !u!4 &364867010
 Transform:
   m_ObjectHideFlags: 0
