@@ -796,6 +796,9 @@ MonoBehaviour:
     type: 3}
   paperAudioClip: {fileID: 8300000, guid: 4219a5d24ecd6a44eb4ed986be82f03d, type: 3}
   footstepAudioClip: {fileID: 8300000, guid: e34545459bde8ac46b39ad11460c86e1, type: 3}
+  briefingAudioClip: {fileID: 0}
+  greetingAudioClip: {fileID: 0}
+  byebyeAudioClip: {fileID: 0}
 --- !u!4 &364867010
 Transform:
   m_ObjectHideFlags: 0
@@ -2634,13 +2637,10 @@ MonoBehaviour:
   agentSprite: {fileID: 1251804946}
   agentCaseFilePos: 6
   agentItemsPos: 14
-  agentAi: {fileID: 0}
-  agentSpeechCanvas: {fileID: 498502635}
   game_status: 0
   current_mission: {fileID: 0}
-  test_add_item_to_luggage: {fileID: 5755795155068078777, guid: 17c77476f183be24f89ee469843d4792,
-    type: 3}
   sound_effect_controller: {fileID: 364867009}
+  agentInventory: {fileID: 0}
 --- !u!114 &1182686545
 MonoBehaviour:
   m_ObjectHideFlags: 0
