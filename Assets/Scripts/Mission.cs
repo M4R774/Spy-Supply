@@ -12,8 +12,10 @@ public class Mission : MonoBehaviour
     public string loss_result;
     public Dictionary<string, int> item_modifiers;
 
-    // Player input
-    public List<GameObject> luggage;
+  private const int LUGGAGE_MAX_SIZE = 3;
+
+  // Player input
+  public List<GameObject> luggage;
 
     // Mission outcome
     public List<GameObject> reward_items;
@@ -56,8 +58,11 @@ public class Mission : MonoBehaviour
 
     public void AddItemToLuggage(GameObject item_to_be_added)
     {
+    if (luggage.Count < LUGGAGE_MAX_SIZE)
+    {
         luggage.Add(item_to_be_added);
     }
+  }
 
     public bool CalculateAndGetMissionResult()
     {
