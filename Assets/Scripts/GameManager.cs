@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         {
             atGameStart = false;
             Scene gamePlayScene = SceneManager.GetSceneByName("Gameplay");
-            if (gamePlayScene.isLoaded) // If for some reason the scene has not been loaded, let's do so
+            if (gamePlayScene.isLoaded) // If for some reason the Gameplay scene been loaded, let's unload it
             {
                 SceneManager.UnloadSceneAsync("Gameplay");
             }
