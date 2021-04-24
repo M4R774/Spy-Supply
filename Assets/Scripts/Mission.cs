@@ -13,7 +13,7 @@ public class Mission : MonoBehaviour
     public Dictionary<string, int> item_modifiers;
 
     // Player input
-    public List<GameObject> luggage;
+    public List<GameObject> luggage = new List<GameObject>();
 
     // Mission outcome
     public List<GameObject> reward_items;
@@ -107,11 +107,9 @@ public class Mission : MonoBehaviour
         return WorstItemName;
     }
 
-    public string GetMissionResultText()
+    public string GetMissionResultText(bool didWeWin)
     {
-        int result = 0;
-
-        if (result == 1) {
+        if (didWeWin == true) {
             return win_result.Replace("$BEST_ITEM", GetBestItem()).Replace("$WORST_ITEM", GetWorstItem());
         } else {
             return loss_result.Replace("$BEST_ITEM", GetBestItem()).Replace("$WORST_ITEM", GetWorstItem());
