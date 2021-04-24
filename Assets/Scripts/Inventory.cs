@@ -14,40 +14,19 @@ public class Inventory : MonoBehaviour
   // Start is called before the first frame update
     void Start()  
     {
-        grid = new Grid2D<GameObject>(10, 2, 1.6f, new Vector3(10, -3), (Grid2D<GameObject> g, int x, int y) => prefabs[Random.Range(0, prefabs.Count - 1)]);
+        grid = new Grid2D<GameObject>(10, 2, 1.6f, new Vector3(10, -5), (Grid2D<GameObject> g, int x, int y) => prefabs[Random.Range(0, prefabs.Count - 1)]);
         for (int x = 0; x < grid.GetWidth(); x++)
         {
-            Instantiate(grid.GetValue(x, 0), GetWorldPosition(x, 0) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("ITEMS").transform);
+        for (int y = grid.GetHeight() - 1; y >= 0; y--)
+            {
+                Debug.Log("Y: " + y);
+                Instantiate(grid.GetValue(x, y), GetWorldPosition(x, y) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("Inventory").transform);
+            }
         }
     }
 
-    void Update()
+    private Vector3 GetWorldPosition(int x, int y)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (grid.GetValue(worldPosition) != null)
-            {
-                dragValue = 0;
-            }
-            else
-            {
-                dragValue = 1;
-            }
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (dragValue != 0)
-            {
-                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                // grid.SetValue(worldPosition, dragValue);
-            }
-        }
+        return new Vector3(x, y) * grid.cellSize + grid.originPosition;
     }
-
-  private Vector3 GetWorldPosition(int x, int y)
-  {
-    return new Vector3(x, y) * grid.cellSize + grid.originPosition;
-  }
 }
