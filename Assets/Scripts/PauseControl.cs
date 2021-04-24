@@ -15,6 +15,7 @@ public class PauseControl : MonoBehaviour
     public GameObject pauseMenu;
     public static bool gameIsPaused;
     private Scene mainMenuScene;
+    [SerializeField] private SoundEffectsController soundEffectsController;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class PauseControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape)) // listens for pressing esc
             {
                 gameIsPaused = !gameIsPaused;
+                soundEffectsController.PlayMenuSound();
                 PauseGame();
             }
         }

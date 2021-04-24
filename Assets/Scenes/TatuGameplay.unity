@@ -1074,8 +1074,6 @@ MonoBehaviour:
   delayBetweenChars: 0.125
   delayAfterPunctuation: 0.25
   delayAfterSentence: 0.5
-  continueButton: {fileID: 0}
-  startButton: {fileID: 0}
   textIndex: 0
 --- !u!114 &568185422
 MonoBehaviour:
@@ -2118,7 +2116,6 @@ GameObject:
   - component: {fileID: 1251804948}
   - component: {fileID: 1251804947}
   - component: {fileID: 1251804949}
-  - component: {fileID: 1251804951}
   - component: {fileID: 1251804950}
   m_Layer: 0
   m_Name: agent_temp
@@ -2227,22 +2224,6 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   agentSpeed: 2
   typeWriterEffect: {fileID: 568185421}
---- !u!114 &1251804951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251804946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e99c3d6fa2d770f4cba56960177bce67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  agentSpeed: 2
-  typeWriterEffect: {fileID: 0}
 --- !u!1 &1306144295
 GameObject:
   m_ObjectHideFlags: 0
