@@ -1,0 +1,24 @@
+{
+    "title": "Everybody, get down!",
+
+    "casefile_description": "Large, international bank has bought a penetration-test from our agency into its main building in London City. Horrible idea, but they got deep pockets.",
+    
+    "difficulty": 2,
+
+    "win_result": "Video footage from security cameras showed our agent marching to the desk and showing the clerk $BEST_ITEM. Distraught teller filled agent’s briefcase with cash quickly. When shown the footage, the bank’s chair members were perplexed…",
+
+    "loss_result": "A thorough research done, a careful plan and calm execution with no shots fired. A successful bank robbery! Or would have been if it were not for $WORST_ITEM…",
+
+    "modifiers": {
+        "military_helmet": 1,
+        "goggles": 1,
+        "radio": 1,
+        "sturdy_boots": 0,
+        "snowshoes": -1,
+        "camo_pants": -2,
+        "sniper_scope": 2,
+        "poison_pill": -1,
+        "salt_shaker": 1,
+        "cross-country_skis": -2
+    }
+}
