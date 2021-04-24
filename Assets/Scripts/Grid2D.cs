@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Grid2D<TGridObject>
 {
   public event EventHandler<OnGridValueChangedEventArgs> OnGridValueChanged;
@@ -15,8 +16,8 @@ public class Grid2D<TGridObject>
   private int height;
   private int width;
   private TGridObject[,] gridArray;
-  private float cellSize;
-  private Vector3 originPosition;
+  public float cellSize;
+    public Vector3 originPosition;
   private TextMesh[,] debugTextArray;
 
   public Grid2D(int width, int height, float cellSize, Vector3 originPosition, Func<Grid2D<TGridObject>, int, int, TGridObject> createGridObject)
@@ -41,7 +42,7 @@ public class Grid2D<TGridObject>
     {
       for (int y = 0; y < gridArray.GetLength(1); y++)
       {
-        debugTextArray[x, y] = CreateWorldText(null, gridArray[x, y].ToString(), GetWorldPosition(x, y) + new Vector3(cellSize, cellSize) * .5f, 10, Color.white, TextAnchor.MiddleCenter, TextAlignment.Center);
+        // debugTextArray[x, y] = CreateWorldText(null, gridArray[x, y].ToString(), GetWorldPosition(x, y) + new Vector3(cellSize, cellSize) * .5f, 10, Color.white, TextAnchor.MiddleCenter, TextAlignment.Center);
         Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white, 100f);
         Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
       }
@@ -113,6 +114,20 @@ public class Grid2D<TGridObject>
   {
     x = Mathf.FloorToInt((worldPosition - originPosition).x / cellSize);
     y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
+  }
+
+  public void SetFirstEmptyValue(TGridObject value)
+  {
+    for (int x = 0; x < gridArray.GetLength(0); x++)
+    {
+      for (int y = 0; y < gridArray.GetLength(1); y++)
+      {
+        if (GetValue(x, y) == null)
+        {
+          SetValue(x, y, value);
+        }
+      }
+    }
   }
 
   public TextMesh CreateWorldText(Transform parent, string text, Vector3 localPosition, int fontSize, Color color, TextAnchor textAnchor, TextAlignment textAlignment)
