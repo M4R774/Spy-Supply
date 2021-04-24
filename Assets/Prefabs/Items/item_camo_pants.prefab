@@ -117,6 +117,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: item_camo_pants
       objectReference: {fileID: 0}
+    - target: {fileID: 2371245395037443992, guid: 71f8a35ecd589504480132e9d965f700,
+        type: 3}
+      propertyPath: m_text
+      value: Camo pants.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114811298801990304, guid: 71f8a35ecd589504480132e9d965f700,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 450
+      objectReference: {fileID: 0}
     - target: {fileID: 6954642333067911727, guid: 71f8a35ecd589504480132e9d965f700,
         type: 3}
       propertyPath: name

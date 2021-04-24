@@ -17,8 +17,14 @@ public class CaseFileAndReport : MonoBehaviour
 
     public void ShowCaseFile()
     {
+        CaseFileController case_file_controller = GetComponent<CaseFileController>();
+        case_file_controller.UpdateText();
         openedCaseFile.SetActive(true);
         camera_controller.canMove = false;
+        if (camera_controller.game_status == gameState.incoming_mission)
+        {
+            camera_controller.game_status = gameState.mission_preparation;
+        }
     }
     public void HideCaseFile()
     {
@@ -31,23 +37,23 @@ public class CaseFileAndReport : MonoBehaviour
         {
             openedReport.SetActive(true);
             camera_controller.canMove = false;
+            ReportFileController report_file_controller = GetComponent<ReportFileController>();
+            report_file_controller.ResolveMission();
         }
-        ReportFileController report_file_controller = openedReport.GetComponentInChildren<ReportFileController>();
-        report_file_controller.ResolveMission();
     }
     public void HideReport()
     {
         openedReport.SetActive(false);
         camera_controller.canMove = true;
-        RemoveOldReport();
         camera_controller.game_status = gameState.incoming_mission;
-        // TODO give new mission? Or maybe this should be done in the casefilecontroller?
+        camera_controller.ShowAgent();
+        camera_controller.StartNewMission();
+        RemoveOldReport();
     }
 
     private void RemoveOldReport()
     {
-        // TODO change the sprite of the fax machine and make it
-        // not clickable
+        // TODO change the sprite of the fax machine
         throw new NotImplementedException();
     }
 }
