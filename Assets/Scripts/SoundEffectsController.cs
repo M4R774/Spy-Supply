@@ -5,9 +5,10 @@ using UnityEngine;
 public class SoundEffectsController : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
-    [SerializeField] List<AudioClip> menuAudioClips;
-    [SerializeField] List<AudioClip> footstepAudioClips;
-    [SerializeField] Coroutine footstepsCoroutine = null;
+    [SerializeField] AudioClip missionFailureAudioClip;
+    [SerializeField] AudioClip incomingFaxAudioClip;
+    [SerializeField] AudioClip paperAudioClip;
+    [SerializeField] AudioClip footstepAudioClip;
 
     void Start()
     {
@@ -17,29 +18,24 @@ public class SoundEffectsController : MonoBehaviour
         }
     }
 
-    void Update()
+    public void PlayMissionFailureSound()
     {
-        
+        audioSource.PlayOneShot(missionFailureAudioClip);
     }
-    public void PlayMenuSound() // Plays random sound from menuAudioClips list
+
+    public void PlayPaperSound()
     {
-        int i = Random.Range(0,menuAudioClips.Count);
-        audioSource.PlayOneShot(menuAudioClips[i]);
+        audioSource.PlayOneShot(paperAudioClip);
     }
-    public void PlayFootSteps() // Plays footstep from footstepsAudioClips in the order they are in
+
+    public void PlayFootstepSound()
     {
-        if(footstepsCoroutine == null)
-        {
-            footstepsCoroutine = StartCoroutine(FootSteps());
-        }
+        audioSource.PlayOneShot(footstepAudioClip);
     }
-    IEnumerator FootSteps()
+
+    public void PlayIncomingFaxSound()
     {
-        for(int i = 0; i < 3; i++)
-        {
-            audioSource.PlayOneShot(footstepAudioClips[i]);
-            yield return new WaitForSeconds(0.25f);
-        }
-        yield return null;
+        audioSource.clip = incomingFaxAudioClip;
+        audioSource.PlayDelayed(2);
     }
 }

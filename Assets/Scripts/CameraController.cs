@@ -35,6 +35,7 @@ public class CameraController : MonoBehaviour
     public Mission current_mission;
 
     public GameObject test_add_item_to_luggage;
+    public SoundEffectsController sound_effect_controller;
 
     void Start()
     {
@@ -69,6 +70,7 @@ public class CameraController : MonoBehaviour
     public void MoveToCaseFile()
     {
         StopAllCoroutines();
+        sound_effect_controller.PlayFootstepSound();
         cameraCoroutine = null;
         cameraCoroutine = StartCoroutine(MoveCamera(cam.transform.position.x, caseFilePos));
 
@@ -79,6 +81,7 @@ public class CameraController : MonoBehaviour
     public void MoveToItems()
     {
         StopAllCoroutines();
+        sound_effect_controller.PlayFootstepSound();
         cameraCoroutine = null;
         cameraCoroutine = StartCoroutine(MoveCamera(cam.transform.position.x, itemsPos));
 
@@ -131,6 +134,7 @@ public class CameraController : MonoBehaviour
     public void FaxMissionReport()
     {
         // TODO: Trigger animation for fax
+        sound_effect_controller.PlayIncomingFaxSound();
         game_status = gameState.mission_debriefing;
     }
 

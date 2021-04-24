@@ -32,7 +32,7 @@ public class PauseControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape)) // listens for pressing esc
             {
                 gameIsPaused = !gameIsPaused;
-                soundEffectsController.PlayMenuSound();
+                // soundEffectsController.PlayMenuSound();
                 PauseGame();
             }
         }
