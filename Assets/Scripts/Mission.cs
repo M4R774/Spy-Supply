@@ -18,6 +18,11 @@ public class Mission : MonoBehaviour
     // Mission outcome
     public List<GameObject> reward_items;
 
+    // Outcome calculation parameters
+    private int max_modifier = 3;
+    private int max_items = 3;
+    private int max_difficulty = 5;
+
     public Mission(string title_parameter, 
         string description_parameter, 
         int difficulty_parameter, 
@@ -56,24 +61,22 @@ public class Mission : MonoBehaviour
 
     public bool CalculateAndGetMissionResult()
     {
-        // TODO:
-        return true;
-        /*     
-        Item List (Modifiers: -3 to +3)
-        1. Gun +1
-        2. Snowshoe -3
-        3. Safari helmet +3
-        (4.) Torch +1
-        (5.) Bulletproof vest +3
+        float odds = (1 - difficulty / (2 * max_difficulty)) + 
+            SumOfModifiers() * difficulty / (2 * max_difficulty) / 
+            (max_modifier * max_items);
+        return odds >= Random.Range(0, 1);
+    }
 
-        sum(items) = 1
-        max_modifier = 3
-        max_items = 3
-        difficulty = 2
-        max_difficulty = 5
-
-        odds = (1 - difficulty / (2 * max_difficulty)) + sum(items) * difficulty / (2 * max_difficulty) / (max_modifier * max_items)
-            = (1 - 0.2) + 3 * + 0.2 / (3 * 3) = 0.86 = 86 % chance of success
-        */
+    public int SumOfModifiers()
+    {
+        int sum = 0;
+        foreach(GameObject item_object in luggage)
+        {
+            Item item = item_object.GetComponent<Item>();
+            string name = item.GetName();
+            item_modifiers.TryGetValue(name, out int modifier);
+            sum += modifier;
+        }
+        return sum;
     }
 }
