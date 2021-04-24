@@ -36,6 +36,7 @@ public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         {
             collidedObject = hit.collider.gameObject;
             Debug.Log("Collided with " + collidedObject.name);
+            GameObject.Find("agent_temp").GetComponent<AgentAi>().AgentBarks();
             if (!collidedObject.name.Contains("Slot"))
             {
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;

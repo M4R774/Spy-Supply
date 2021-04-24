@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float cameraSpeed;
     [SerializeField] private Coroutine cameraCoroutine;
     public bool canMove = true;
+
     [Space(10)]
     // Agent sprite stuff
     [SerializeField] private GameObject agentSprite;
@@ -29,11 +30,13 @@ public class CameraController : MonoBehaviour
     private float agentPosY;
     private bool flipX;
     [SerializeField] private Coroutine agentCoroutine;
+    [SerializeField] private AgentAi agentAi;
+    [SerializeField] private Canvas agentSpeechCanvas;
 
+    [Space(10)]
     // Game/mission status
     public gameState game_status;
     public Mission current_mission;
-
     public GameObject test_add_item_to_luggage;
     public SoundEffectsController sound_effect_controller;
 
@@ -44,6 +47,8 @@ public class CameraController : MonoBehaviour
 
         // Init mission
         current_mission = Missions.GetRandomMission();
+
+        agentAi = agentSprite.GetComponent<AgentAi>();
     }
     void Update()
     {
@@ -75,6 +80,8 @@ public class CameraController : MonoBehaviour
 
         agentCoroutine = null;
         agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentCaseFilePos, true));
+
+        //agentSpeechCanvas.transform.position = new Vector3(-3f, agentSpeechCanvas.transform.position.y, agentSpeechCanvas.transform.position.z);
     }
 
     public void MoveToItems()
@@ -86,6 +93,8 @@ public class CameraController : MonoBehaviour
 
         agentCoroutine = null;
         agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentItemsPos, false));
+
+        //agentSpeechCanvas.transform.position = new Vector3(3f, agentSpeechCanvas.transform.position.y, agentSpeechCanvas.transform.position.z);
     }
 
     IEnumerator MoveCamera(float startPos, float endPos)
@@ -141,12 +150,14 @@ public class CameraController : MonoBehaviour
 
     public void HideAgent()
     {
-        agentSprite.SetActive(false);
+        //agentSprite.SetActive(false);
+        agentAi.AgentExits();
     }
 
     public void ShowAgent()
     {
         Debug.Log("activate agent sprite!");
         agentSprite.SetActive(true);
+        agentAi.AgentEnters();
     }
 }

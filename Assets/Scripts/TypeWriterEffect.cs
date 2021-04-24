@@ -13,7 +13,10 @@ using System;
 public class TypeWriterEffect : MonoBehaviour
 {
     public TextMeshProUGUI text;
-    public TextMeshProUGUI[] texts;
+    //public TextMeshProUGUI[] texts;
+    [SerializeField] List<TextMeshProUGUI> barks;
+    public TextMeshProUGUI enterText;
+    public TextMeshProUGUI exitText;
     public bool playOnStart = true;
     public float delayToStart = 0;
     public float delayBetweenChars = 0.125f;
@@ -37,7 +40,7 @@ public class TypeWriterEffect : MonoBehaviour
     private bool firstTime = false; // Hack to prevent text from disappearing when player leaves interaction collider
     void Awake() // Is run before OnEnable()
     {
-        text = texts[0];
+        //text = texts[0];
         originDelayBetweenChars = delayBetweenChars;
 
         charComma = Convert.ToChar(44);
@@ -77,14 +80,14 @@ public class TypeWriterEffect : MonoBehaviour
         text.text = ""; //clean text
         Invoke("Start_PlayText", delayBetweenChars); //Invoke effect
     }
-    public void Continue()
+    /*public void Continue() // Used to continue if there's multiple textes to go thru
     {
         text.color = colHidden;
         //continueButton.SetActive(false);
         textIndex++; // each time we continue, the text index is incremented
         text = texts[textIndex];
         ChangeText(text.text, delayToStart);
-    }
+    }*/
 
     public void Start_PlayText()
     {
@@ -123,8 +126,20 @@ public class TypeWriterEffect : MonoBehaviour
         text.text = "";
         yield return null;
     }
-    public void CallChangeText()
+    public void CallEnterText()
     {
-        ChangeText(text.text, delayToStart);
+        StopAllCoroutines();
+        ChangeText(enterText.text, delayToStart);
+    }
+    public void CallExitText()
+    {
+        StopAllCoroutines();
+        ChangeText(exitText.text, delayToStart);
+    }
+    public void CallBarkText()
+    {
+        StopAllCoroutines();
+        int i = UnityEngine.Random.Range(0, barks.Count);
+        ChangeText(barks[i].text, delayToStart);
     }
 }
