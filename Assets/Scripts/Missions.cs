@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missions : MonoBehaviour
+public static class Missions
 {
-    public List<Mission> missions;
+    public static List<Mission> missions;
 
-    // Start is called before the first frame update
-    void Awake()
+    static Missions()
     {
-        Mission mission = new Mission();  // Test mission
+        Mission mission = new Mission();
         missions.Add(mission);
-        
+
         mission = new Mission(
             "Rumble In The Jungle",
             "Our sources tell disturbing news from the deep jungle. Foreign intelligence agencies have sold guns to the enemies of our allies. Intercept the next shipment!",
@@ -57,7 +56,7 @@ public class Missions : MonoBehaviour
         missions.Add(mission);
     }
 
-    public Mission GetRandomMission()
+    public static Mission GetRandomMission()
     {
         return missions[Random.Range(0, missions.Count - 1)];
     }
