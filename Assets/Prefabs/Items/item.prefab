@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558d9ea21545a7b458c01018c060eaa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Goggles
+  name: banana
   description: asd
 --- !u!222 &2326147405381502575
 CanvasRenderer:
