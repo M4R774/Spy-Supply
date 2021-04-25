@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class SoundEffectsController : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource agentAudioSource;
     [SerializeField] AudioClip missionFailureAudioClip;
     [SerializeField] AudioClip incomingFaxAudioClip;
     [SerializeField] AudioClip paperAudioClip;
@@ -22,6 +23,10 @@ public class SoundEffectsController : MonoBehaviour
         if(audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
+        }
+        if(agentAudioSource == null)
+        {
+            agentAudioSource = GetComponent<AudioSource>();
         }
     }
 
@@ -48,16 +53,19 @@ public class SoundEffectsController : MonoBehaviour
 
     public void PlayMissionBriefingSound()
     {
-        audioSource.PlayOneShot(briefingAudioClip);
+        agentAudioSource.clip = briefingAudioClip;
+        agentAudioSource.Play();
     }
 
     public void PlayGreetingSound()
     {
-        audioSource.PlayOneShot(greetingAudioClip);
+        agentAudioSource.clip = greetingAudioClip;
+        agentAudioSource.Play();
     }
     public void PlayByeByeSound()
     {
-        audioSource.PlayOneShot(byebyeAudioClip);
+        agentAudioSource.clip = byebyeAudioClip;
+        agentAudioSource.Play();
     }
 
     public void PlayRadioBlipSound()
@@ -67,6 +75,7 @@ public class SoundEffectsController : MonoBehaviour
 
     public void PlayAgentThanksSound()
     {
-        audioSource.PlayOneShot(agentThanksClips[Random.Range(0, agentThanksClips.Count - 1)]);
+        agentAudioSource.clip = agentThanksClips[Random.Range(0, agentThanksClips.Count - 1)];
+        agentAudioSource.Play();
     }
 }
