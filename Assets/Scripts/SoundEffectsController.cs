@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SoundEffectsController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class SoundEffectsController : MonoBehaviour
     [SerializeField] AudioClip briefingAudioClip;
     [SerializeField] AudioClip greetingAudioClip;
     [SerializeField] AudioClip byebyeAudioClip;
+    [SerializeField] AudioClip radioBlibAudioClip;
+    [SerializeField] List<AudioClip> agentThanksClips;
 
     void Start()
     {
@@ -55,5 +58,15 @@ public class SoundEffectsController : MonoBehaviour
     public void PlayByeByeSound()
     {
         audioSource.PlayOneShot(byebyeAudioClip);
+    }
+
+    public void PlayRadioBlipSound()
+    {
+        audioSource.PlayOneShot(radioBlibAudioClip);
+    }
+
+    public void PlayAgentThanksSound()
+    {
+        audioSource.PlayOneShot(agentThanksClips[Random.Range(0, agentThanksClips.Count - 1)]);
     }
 }
