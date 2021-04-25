@@ -66,14 +66,13 @@ public class Mission
         }
     }
 
-    public bool CalculateAndGetMissionResult()
+    public float CalculateMissionFinalOdds()
     {
         float odds = (1 - (float) difficulty / (2 * max_difficulty)) + 
             SumOfModifiers() * (float) difficulty / (2 * max_difficulty) / 
             (max_modifier * max_items);
 
-        float toBeat = (float) Random.Range(0, 101) / 100;
-        return odds >= toBeat;
+        return odds;
     }
 
 
