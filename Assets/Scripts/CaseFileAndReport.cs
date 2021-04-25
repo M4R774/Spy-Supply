@@ -11,9 +11,12 @@ public class CaseFileAndReport : MonoBehaviour
     [SerializeField] private GameObject openedReport;
     private CameraController camera_controller;
     public SoundEffectsController sound_effect_controller;
+    // Move buttons
+    [SerializeField] GameObject moveButtons;
     void Start()
     {
         camera_controller = Camera.main.GetComponent<CameraController>();
+        moveButtons.SetActive(false);
     }
 
     public void ShowCaseFile()
@@ -27,6 +30,7 @@ public class CaseFileAndReport : MonoBehaviour
         {
             camera_controller.game_status = gameState.mission_preparation;
             sound_effect_controller.PlayMissionBriefingSound();
+            moveButtons.SetActive(true);
         }
     }
     public void HideCaseFile()
@@ -55,6 +59,7 @@ public class CaseFileAndReport : MonoBehaviour
         camera_controller.StartNewMission();
         sound_effect_controller.PlayPaperSound();
         // RemoveOldReport();
+        moveButtons.SetActive(false);
     }
 
     private void RemoveOldReport()

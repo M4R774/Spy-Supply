@@ -61,7 +61,7 @@ public class CameraController : MonoBehaviour
             {
                 MoveToCaseFile();
             }
-            else if(Input.GetKeyDown(KeyCode.D) && game_status != gameState.incoming_mission)
+            else if(Input.GetKeyDown(KeyCode.D))
             {
                 MoveToItems();
             }
@@ -91,15 +91,18 @@ public class CameraController : MonoBehaviour
 
     public void MoveToItems()
     {
-        StopAllCoroutines();
-        sound_effect_controller.PlayFootstepSound();
-        cameraCoroutine = null;
-        cameraCoroutine = StartCoroutine(MoveCamera(cam.transform.position.x, itemsPos));
+        if(game_status != gameState.incoming_mission)
+        {
+            StopAllCoroutines();
+            sound_effect_controller.PlayFootstepSound();
+            cameraCoroutine = null;
+            cameraCoroutine = StartCoroutine(MoveCamera(cam.transform.position.x, itemsPos));
 
-        agentCoroutine = null;
-        agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentItemsPos, false));
+            agentCoroutine = null;
+            agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentItemsPos, false));
 
-        //agentSpeechText.transform.position = new Vector3(3f, agentSpeechText.transform.position.y, agentSpeechText.transform.position.z);
+            //agentSpeechText.transform.position = new Vector3(3f, agentSpeechText.transform.position.y, agentSpeechText.transform.position.z);
+        }
     }
 
     IEnumerator MoveCamera(float startPos, float endPos)
