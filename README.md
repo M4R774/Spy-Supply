@@ -2,7 +2,7 @@
 
 Ludum Dare 48 gamejam repo. Lojo = Lohja in Swedish, a place where we physically crunch.
 
-![alt text](screenshot1.png "Title")
+![Screenshot of the game](./screenshot1.png)
 
 ## The game
 
