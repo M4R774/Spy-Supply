@@ -101,6 +101,8 @@ public class CameraController : MonoBehaviour
 
         agentCoroutine = null;
         agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentCaseFilePos, true));
+
+        agentSpeechText.transform.localPosition = new Vector3(155f, agentSpeechText.transform.localPosition.y, agentSpeechText.transform.localPosition.z);
     }
 
     public void MoveToItems()
@@ -115,7 +117,7 @@ public class CameraController : MonoBehaviour
             agentCoroutine = null;
             agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentItemsPos, false));
 
-            //agentSpeechText.transform.position = new Vector3(3f, agentSpeechText.transform.position.y, agentSpeechText.transform.position.z);
+            agentSpeechText.transform.localPosition = new Vector3(7.5f, agentSpeechText.transform.localPosition.y, agentSpeechText.transform.localPosition.z);
         }
     }
 
