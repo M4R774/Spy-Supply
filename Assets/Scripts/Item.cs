@@ -8,19 +8,19 @@ public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     CanvasGroup group;
     Vector3 originalPosition;
     
-    public string item_name;
+    public string name;
     [TextArea(5,10)] public string description;
     
     Item(string name_parameter, string description_parameter)
     {
-        item_name = name_parameter;
+        name = name_parameter;
         description = description_parameter;
     }
 
     // For testing
     Item()
     {
-        item_name = "testi itemi";
+        name = "testi itemi";
         description = "rakentajalle ei annettu parametreja joten luotiin vain tyhjä itemi";
     }
 
@@ -69,6 +69,6 @@ public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     public string GetName()
     {
-        return item_name;
+        return name;
     }
 }

@@ -89,7 +89,7 @@ public class Mission
         {   
             Item item = item_object.GetComponent<Item>();
             string name = item.GetName();
-            Debug.Log("Item name" + name);
+            // Debug.Log("Item name: " + name);
             item_modifiers.TryGetValue(name, out int modifier);
 
             if (modifier >= BestItemModifier) {
@@ -104,7 +104,7 @@ public class Mission
     public string GetWorstItem()
     {
         int WorstItemModifier = - max_modifier;
-        string WorstItemName = "Guts";
+        string WorstItemName = "Nerves";
 
         foreach(GameObject item_object in luggage)
         {

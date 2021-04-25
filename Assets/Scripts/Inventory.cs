@@ -8,9 +8,6 @@ public class Inventory : MonoBehaviour
     public GameObject slot;
 
     public List<GameObject> prefabs;
-    int dragValue;
-
-    int value;
 
   // Start is called before the first frame update
     void Start()  

@@ -8,7 +8,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
 {
     CanvasGroup group;
     Vector3 originalPosition;
-  // Start is called before the first frame update
+
 
     private void Awake() {
         group = GetComponent<CanvasGroup>();
@@ -20,7 +20,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("Began drag");
+        //Debug.Log("Began drag");
         originalPosition = transform.position;
         group.blocksRaycasts = false;
         group.alpha = 0.6f;
@@ -34,7 +34,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
         GameObject collidedObject;
         if (hit.collider != null) {
         collidedObject = hit.collider.gameObject;
-        Debug.Log("Collided with " + collidedObject.name);
+        //Debug.Log("Collided with " + collidedObject.name);
         if (!collidedObject.name.Contains("Slot"))
         {
             // eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
@@ -43,13 +43,13 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
             // eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
         }
         
-        Debug.Log("Ended drag");
+        //Debug.Log("Ended drag");
         group.blocksRaycasts = true;
         group.alpha = 1f;
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("Ended drag");
+        //Debug.Log("Ended drag");
     }
 }
