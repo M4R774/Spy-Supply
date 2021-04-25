@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IDropHandler
 {
-  public void OnDrop(PointerEventData pointerEventData) {
+    public void OnDrop(PointerEventData pointerEventData) {
         if (pointerEventData != null) {
             
             CameraController controller = Camera.main.GetComponent<CameraController>();
