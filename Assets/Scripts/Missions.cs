@@ -29,8 +29,10 @@ public static class Missions
                 {"Camo pants", 2},
                 {"Scope", 2},
                 {"Poison Pill", -3},
-                {"Salt Shaker", -2},
-                {"Skis", -3}
+                {"Salt Shaker", 0},
+                {"Skis", -3},
+                {"Pistol", 3},
+                {"Shovel", 1}
             }
         );
         missions.Add(mission);
@@ -54,7 +56,9 @@ public static class Missions
                 {"Scope", -1},
                 {"Poison Pill", -2},
                 {"Salt Shaker", 2},
-                {"Skis", -2}
+                {"Skis", -2},
+                {"Pistol", -1},
+                {"Shovel", 3}
             }
         );
         missions.Add(mission);
@@ -78,7 +82,9 @@ public static class Missions
                 {"Scope",        2},
                 {"Poison Pill",        -1},
                 {"Salt Shaker",         1},
-                {"Skis", -2}
+                {"Skis", -2},
+                {"Pistol", 3},
+                {"Shovel", 1}
             }
         );
         missions.Add(mission);
@@ -102,7 +108,9 @@ public static class Missions
                 {"Scope",        1},
                 {"Poison Pill",         0},
                 {"Salt Shaker",         0},
-                {"Skis",  3}
+                {"Skis",  3},
+                {"Pistol", -1},
+                {"Shovel", 2}
             }
         );
         missions.Add(mission);
@@ -126,7 +134,9 @@ public static class Missions
                 {"Scope",       -1},
                 {"Poison Pill",        -3},
                 {"Salt Shaker",        -1},
-                {"Skis", -3}
+                {"Skis", -3},
+                {"Pistol", -2},
+                {"Shovel", 3}
             }
         );
         missions.Add(mission);
@@ -150,7 +160,35 @@ public static class Missions
                 {"Scope",        0},
                 {"Poison Pill",        -3},
                 {"Salt Shaker",         2},
-                {"Skis",  0}
+                {"Skis",  0},
+                {"Pistol", 0},
+                {"Shovel", -1}
+            }
+        );
+        missions.Add(mission);
+
+        mission = new Mission(
+            "Presidential threat",
+            "Disturbing call from the Whitehouse: The president is under a great threat, they say. Kidnapped?! Godspeed, agent.",
+            1,
+            "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. Our agent and their $BEST_ITEM appeared sharp, however, and Mr. President was impressed.",
+            "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. Our agent and their $WORST_ITEM boarded the next flight home with a soda in hand.",
+            "whitehouse",
+            new Dictionary<string, int>
+            {
+                {"Helmet", 1},
+                {"Goggles", 1},
+                {"Night Vision Goggles", 2},
+                {"Radio", 1},
+                {"Boots", 1},
+                {"Snowshoes", -3},
+                {"Camo pants", 1},
+                {"Scope", 0},
+                {"Poison Pill", -3},
+                {"Salt Shaker", -3},
+                {"Skis", -3},
+                {"Pistol", 2},
+                {"Shovel", -3}
             }
         );
         missions.Add(mission);
@@ -159,25 +197,54 @@ public static class Missions
             "Presidential threat",
             "Disturbing call from the Whitehouse: The president is under a great threat, they say. Kidnapped?! Godspeed, agent.",
             5,
-            "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. Our agent and their $BEST_ITEM appeared sharp, however, and Mr. President was impressed.",
-            "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. Our agent and their $WORST_ITEM boarded the next flight home with a soda in hand.",
+            "With $BEST_ITEM our agent managed to rescue Mr. President from the hands of the terrorist. God bless us all! ",
+            "$WORST_ITEM failed our agent and Mr. President is dead. The Vice President will be helding a press conference for the public shortly. Dark times for our Empire...",
             "whitehouse",
             new Dictionary<string, int>
             {
-                {"Helmet",     1},
-                {"Goggles",             1},
+                {"Helmet", 3},
+                {"Goggles", 1},
                 {"Night Vision Goggles", 1},
-                {"Radio",               1},
-                {"Boots",        1},
-                {"Snowshoes",           1},
-                {"Camo pants",          1},
-                {"Scope",        1},
-                {"Poison Pill",        -3},
-                {"Salt Shaker",        -2},
-                {"Skis", -2}
+                {"Radio", 2},
+                {"Boots", 2},
+                {"Snowshoes", -3},
+                {"Camo pants", 1},
+                {"Scope", 2},
+                {"Poison Pill", -3},
+                {"Salt Shaker", 0},
+                {"Skis", -3},
+                {"Pistol", 3},
+                {"Shovel", 1}
             }
         );
         missions.Add(mission);
+
+        mission = new Mission(
+            "Suppress the Opposition",
+            "New political party is threatening the cohesion of our Empire. \"Take care\" of the opposition leader to maintain the status quo. She was last seen in Siberia. You will departure at zero-seven-hundred hours. ",
+            3,
+            "The opposition leader could not escape from our agents $BEST_ITEM and was easily dealt with. Peace has returned to the Empire. ",
+            "The tenuous $WORST_ITEM did not help our agent this time and the opposition leader escaped. The integrity of our Empire is compromised. ",
+            "siberia",
+            new Dictionary<string, int>
+            {
+                {"Helmet", -1},
+                {"Goggles", 0},
+                {"Night Vision Goggles", 2},
+                {"Radio", -3},
+                {"Boots", 1},
+                {"Snowshoes", 3},
+                {"Camo pants", 0},
+                {"Scope", 3},
+                {"Poison Pill", 3},
+                {"Salt Shaker", 0},
+                {"Skis", 3},
+                {"Pistol", 3},
+                {"Shovel", -3}
+            }
+        );
+        missions.Add(mission);
+
         missions.Shuffle();
     }
 

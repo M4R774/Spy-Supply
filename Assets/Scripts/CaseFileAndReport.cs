@@ -77,6 +77,11 @@ public class CaseFileAndReport : MonoBehaviour
         reportAnimator.SetTrigger("noprint");
     }
 
+    public void HideMoveButtons()
+    {
+        moveButtons.SetActive(false);
+    }
+
     private void RemoveOldReport()
     {
         // TODO change the sprite of the fax machine

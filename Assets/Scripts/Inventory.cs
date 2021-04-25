@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
   // Start is called before the first frame update
     void Start()  
     {
-        grid = new Grid2D<GameObject>(10, 2, 1.6f, new Vector3(12, -4.55f), (Grid2D<GameObject> g, int x, int y) => prefabs[Random.Range(0, prefabs.Count - 1)]);
+        grid = new Grid2D<GameObject>(10, 2, 1.6f, new Vector3(12, -4.55f), (Grid2D<GameObject> g, int x, int y) => prefabs[Random.Range(0, prefabs.Count)]);
         for (int x = 0; x < grid.GetWidth(); x++)
         {
         for (int y = grid.GetHeight() - 1; y >= 0; y--)
@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
 
     private void AddRandomItemToEmptySlot()
     {
-        GameObject random_item = prefabs[Random.Range(0, prefabs.Count - 1)];
+        GameObject random_item = prefabs[Random.Range(0, prefabs.Count)];
         grid.SetFirstEmptyValue(random_item);
     }
 
