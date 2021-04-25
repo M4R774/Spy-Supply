@@ -53,7 +53,7 @@ public class CaseFileAndReport : MonoBehaviour
     }
     public void ShowReport()
     {
-        if (camera_controller.game_status == gameState.mission_debriefing)
+        if (camera_controller.game_status == gameState.mission_debriefing && reportAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "ReportIHasPrint")
         {
             openedReport.SetActive(true);
             camera_controller.canMove = false;
