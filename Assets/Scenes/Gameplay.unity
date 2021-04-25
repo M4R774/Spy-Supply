@@ -3861,6 +3861,8 @@ MonoBehaviour:
   agentSpeed: 2
   typeWriterEffect: {fileID: 1979200887}
   sound_effect_controller: {fileID: 364867009}
+  case_file: {fileID: 1731957242}
+  case_file_sprite: {fileID: 0}
 --- !u!1 &1290768359
 GameObject:
   m_ObjectHideFlags: 0
@@ -5004,7 +5006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1731957243
 RectTransform:
   m_ObjectHideFlags: 0

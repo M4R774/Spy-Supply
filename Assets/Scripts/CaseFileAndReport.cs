@@ -35,11 +35,11 @@ public class CaseFileAndReport : MonoBehaviour
         openedCaseFile.SetActive(true);
         camera_controller.canMove = false;
         sound_effect_controller.PlayPaperSound();
+        moveButtons.SetActive(false);
         if (camera_controller.game_status == gameState.incoming_mission)
         {
             camera_controller.game_status = gameState.mission_preparation;
             sound_effect_controller.PlayMissionBriefingSound();
-            moveButtons.SetActive(true);
         }
     }
     public void HideCaseFile()
@@ -48,7 +48,7 @@ public class CaseFileAndReport : MonoBehaviour
         caseFileHeaderText.SetActive(false);
         caseFileBodyText.SetActive(false);
         caseFileImage.SetActive(false);
-
+        moveButtons.SetActive(true);
         openedCaseFile.SetActive(false);
         camera_controller.canMove = true;
         sound_effect_controller.PlayPaperSound();

@@ -179,7 +179,6 @@ public class CameraController : MonoBehaviour
 
     public void ShowAgent()
     {
-        //agentSprite.SetActive(true);
         agentAi.AgentEnters();
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AgentAi : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class AgentAi : MonoBehaviour
     [SerializeField] float agentSpeed = 2f;
     [SerializeField] TypeWriterEffect typeWriterEffect;
     [SerializeField] private SoundEffectsController sound_effect_controller;
+    [SerializeField] private GameObject case_file;
+    [SerializeField] private Image case_file_sprite;
     void Start()
     {
         if(animator == null)
@@ -21,14 +24,10 @@ public class AgentAi : MonoBehaviour
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
+        case_file_sprite = case_file.GetComponent<Image>();
         AgentEnters();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void AgentEnters()
     {
         transform.position = new Vector3 (transform.position.x, -1f, transform.transform.position.z);
@@ -70,12 +69,36 @@ public class AgentAi : MonoBehaviour
         agentColorCoroutine = null;
         yield return null;
     }
+
+    IEnumerator FadeInAndOutCaseFile(Color32 endingColor)
+    {
+        float timeElapsed = 0;
+        Color32 newColor;
+        Color32 startColor = case_file_sprite.color;
+        Color32 endColor = endingColor;
+
+        while (timeElapsed < agentSpeed)
+        {
+            newColor = Color.Lerp(startColor, endColor, timeElapsed / agentSpeed);
+            timeElapsed += Time.deltaTime;
+            case_file_sprite.color = newColor;
+            yield return null;
+        }
+        case_file_sprite.color = endColor;
+        if (endColor.a == 0)
+        {
+            case_file.SetActive(false);
+        }
+        yield return null;
+    }
+
     IEnumerator AgentPos(float endingPos, bool entering)
     {
         if(!entering)
         {
-             typeWriterEffect.CallExitText();
-             sound_effect_controller.PlayByeByeSound();
+            typeWriterEffect.CallExitText();
+            sound_effect_controller.PlayByeByeSound();
+            StartCoroutine(FadeInAndOutCaseFile(new Color(255, 255, 255, 0)));
         }
         float timeElapsed = 0;
         float newPos;
@@ -96,6 +119,9 @@ public class AgentAi : MonoBehaviour
         {
             typeWriterEffect.CallEnterText();
             sound_effect_controller.PlayGreetingSound();
+            case_file.SetActive(true);
+            case_file_sprite.color = new Color(255, 255, 255, 0);
+            StartCoroutine(FadeInAndOutCaseFile(new Color(255, 255, 255, 255)));
         }
         yield return null;
     }
