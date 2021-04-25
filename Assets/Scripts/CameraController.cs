@@ -41,6 +41,7 @@ public class CameraController : MonoBehaviour
     public SoundEffectsController sound_effect_controller;
 
     public GameObject agentInventory;
+    [SerializeField] private Animator reportAnimator;
 
   void Start()
     {
@@ -165,7 +166,7 @@ public class CameraController : MonoBehaviour
 
     public void FaxMissionReport()
     {
-        // TODO: Trigger animation for fax
+        reportAnimator.SetTrigger("prints");
         sound_effect_controller.PlayIncomingFaxSound();
         game_status = gameState.mission_debriefing;
     }

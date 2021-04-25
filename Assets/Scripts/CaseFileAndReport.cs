@@ -72,6 +72,7 @@ public class CaseFileAndReport : MonoBehaviour
         sound_effect_controller.PlayPaperSound();
         // RemoveOldReport();
         moveButtons.SetActive(false);
+        reportAnimator.SetTrigger("noprint");
     }
 
     private void RemoveOldReport()
