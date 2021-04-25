@@ -71,7 +71,9 @@ public class Mission
         float odds = (1 - (float) difficulty / (2 * max_difficulty)) + 
             SumOfModifiers() * (float) difficulty / (2 * max_difficulty) / 
             (max_modifier * max_items);
-        return odds >= Random.Range(0, 1);
+
+        float toBeat = (float) Random.Range(0, 101) / 100;
+        return odds >= toBeat;
     }
 
 
