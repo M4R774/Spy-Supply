@@ -10,6 +10,7 @@ public class Mission
     public int difficulty;
     public string win_result;
     public string loss_result;
+    public string picture_file_name;
     public Dictionary<string, int> item_modifiers;
 
     // Player input
@@ -28,6 +29,7 @@ public class Mission
         int difficulty_parameter, 
         string win_result_parameter, 
         string loss_result_parameter,
+        string picture_file_name_parameter,
         Dictionary<string, int> item_modifiers_parameter) 
     {
         title = title_parameter;
@@ -35,6 +37,7 @@ public class Mission
         difficulty = difficulty_parameter;
         win_result = win_result_parameter;
         loss_result = loss_result_parameter;
+        picture_file_name = picture_file_name_parameter;
         item_modifiers = item_modifiers_parameter;
     }
 
@@ -47,6 +50,7 @@ public class Mission
         difficulty = 2;
         win_result = "VOITIT PELIN!";
         loss_result = "hävisit pelin :(";
+        picture_file_name = "testCaseImage.png";
         item_modifiers = new Dictionary<string, int>();  // empty
     }
 
