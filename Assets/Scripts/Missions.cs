@@ -17,6 +17,7 @@ public static class Missions
             4,
             "Our agent tracked down and disarmed the arms dealers! Agent's $BEST_ITEM proved to be especially helpful. Local people were conflicted but they had no say in the matter.",
             "Few months later, lone traveller brings news that a foreigner had disappeared in bushes after a firefight. Only their $WORST_ITEM had been found...",
+            "jungle3.png",
             new Dictionary<string, int>
             {
                 {"Helmet", 2},
@@ -40,6 +41,7 @@ public static class Missions
             2,
             "After excruciating hours of digging sand with a tiny excavator, our agent, and her trusty $BEST_ITEM unblocked the ship and secured the billion-dollar merchandise aboard.",
             "Our agent was caught trying to bribe and official with their $WORST_ITEM and was promptly escorted out of the target country. Disappointing, clearly more anti-corruption training is needed for our personnel.",
+            "desert.png",
             new Dictionary<string, int>
             {
                 {"Helmet", 1},
@@ -63,6 +65,7 @@ public static class Missions
             3,
             "Video footage from security cameras showed our agent marching to the desk and showing the clerk their $BEST_ITEM. Distraught teller filled agent’s briefcase with cash quickly. When shown the footage, the bank’s chair members were perplexed...",
             "A thorough research done, a careful plan and calm execution with no shots fired. A successful bank robbery! Or would have been if it were not for agent's $WORST_ITEM...",
+            "bank.png",
             new Dictionary<string, int>
             {
                 {"Helmet",     1},
@@ -86,6 +89,7 @@ public static class Missions
             4,
             "Travelling by helicopter, snowmobile and finally foot, our agent found the weird, crashed saucer. Steaming grey goo surrounded the vehicle but had completely disappeared by the time our agent had dragged the UFO-remains to nearest friendly base. Agent's $BEST_ITEM served its purpose.",
             "Horrible snowstorms had gathered over the crash zone. We quickly lost signal with our agent. Later in the spring, the UFO-remains were gone and agent's $WORST_ITEM was found hanging on top of a stick.",
+            "siberia.png",
             new Dictionary<string, int>
             {
                 {"Helmet",    -3},
@@ -109,6 +113,7 @@ public static class Missions
             2,
             "Great success! Our agent managed to squeeze in through the rubble and delivered supplies until the cave was cleared. Agent's $BEST_ITEM was surprisingly helpful.",
             "Oh no! Our agent got in too late because of failed $BEST_ITEM and the miners had already suffocated. However, this was only a minor inconvenience and electric car battery industry soon recovered.",
+            "jungle3.png",
             new Dictionary<string, int>
             {
                 {"Helmet",     0},
@@ -132,6 +137,7 @@ public static class Missions
             1,
             "It was tedious work, but our agent managed to connect the dots and uncovered a grand scheme of corruption: Janitor had sold access to the archive and high-profile targets had took advantage of it. Armed with $BEST_ITEM, our agent took out the dirty laundry.",
             "After tracking down a path of shred paper up and down the narrow corridors, you find a bored cat atop an empty shelf. It found agent's $BEST_ITEM interesting enough, however, and you managed to lure it back up.",
+            "bank.png",
             new Dictionary<string, int>
             {
                 {"Helmet",     0},
@@ -155,6 +161,7 @@ public static class Missions
             5,
             "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. Our agent and their $BEST_ITEM appered sharp, however, and Mr. President was impressed.",
             "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. Our agent and their $WORST_ITEM boarded the next flight home with a soda in hand.",
+            "whitehouse.png",
             new Dictionary<string, int>
             {
                 {"Helmet",     1},
