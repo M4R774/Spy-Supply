@@ -1213,6 +1213,11 @@ MonoBehaviour:
   briefingAudioClip: {fileID: 8300000, guid: d3e8615f062b8b34291fb7ded8ef3a04, type: 3}
   greetingAudioClip: {fileID: 8300000, guid: 065339b227da5bf44942f9b57551dd71, type: 3}
   byebyeAudioClip: {fileID: 8300000, guid: 492b691d7be1e8f48984cb8dcb0fa413, type: 3}
+  radioBlibAudioClip: {fileID: 8300000, guid: 64a28f8a2f5346b4ba46876f65ff2c07, type: 3}
+  agentThanksClips:
+  - {fileID: 8300000, guid: b20d53c5171caef43850f8bfdcbd9b76, type: 3}
+  - {fileID: 8300000, guid: 8402e9050a194514795ccabd28d4ef86, type: 3}
+  - {fileID: 8300000, guid: bee41ec1e7b91b740934a482c1759823, type: 3}
 --- !u!4 &364867010
 Transform:
   m_ObjectHideFlags: 0
@@ -4302,6 +4307,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1182686544}
         m_MethodName: SendAgentToMission
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 364867009}
+        m_MethodName: PlayRadioBlipSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
