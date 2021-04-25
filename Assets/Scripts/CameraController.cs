@@ -56,12 +56,11 @@ public class CameraController : MonoBehaviour
     {
         if(canMove)
         {
-            // For debugging
-            if(Input.GetKeyDown(KeyCode.A))
+            if(Input.GetKeyDown(KeyCode.A) && game_status == gameState.mission_preparation)
             {
                 MoveToCaseFile();
             }
-            else if(Input.GetKeyDown(KeyCode.D) && game_status != gameState.incoming_mission)
+            else if(Input.GetKeyDown(KeyCode.D) && game_status == gameState.mission_preparation)
             {
                 MoveToItems();
             }
