@@ -7,7 +7,9 @@ using UnityEngine;
 // Camera movement is blocked while viewing either.
 public class CaseFileAndReport : MonoBehaviour
 {
+    [SerializeField] private Animator caseFileAnimator;
     [SerializeField] private GameObject openedCaseFile;
+    [SerializeField] private Animator reportAnimator;
     [SerializeField] private GameObject openedReport;
     private CameraController camera_controller;
     public SoundEffectsController sound_effect_controller;
@@ -21,6 +23,8 @@ public class CaseFileAndReport : MonoBehaviour
 
     public void ShowCaseFile()
     {
+        caseFileAnimator.SetTrigger("opens");
+
         CaseFileController case_file_controller = GetComponent<CaseFileController>();
         case_file_controller.UpdateText();
         openedCaseFile.SetActive(true);
@@ -35,6 +39,8 @@ public class CaseFileAndReport : MonoBehaviour
     }
     public void HideCaseFile()
     {
+        caseFileAnimator.SetTrigger("closes");
+
         openedCaseFile.SetActive(false);
         camera_controller.canMove = true;
         sound_effect_controller.PlayPaperSound();
