@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public enum gameState
 {
@@ -31,7 +32,7 @@ public class CameraController : MonoBehaviour
     private bool flipX;
     [SerializeField] private Coroutine agentCoroutine;
     [SerializeField] private AgentAi agentAi;
-    [SerializeField] private Canvas agentSpeechCanvas;
+    [SerializeField] private TextMeshProUGUI agentSpeechText;
 
     [Space(10)]
     // Game/mission status
@@ -85,7 +86,7 @@ public class CameraController : MonoBehaviour
         agentCoroutine = null;
         agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentCaseFilePos, true));
 
-        //agentSpeechCanvas.transform.position = new Vector3(-3f, agentSpeechCanvas.transform.position.y, agentSpeechCanvas.transform.position.z);
+        //agentSpeechText.transform.position = new Vector3(-3f, agentSpeechText.transform.position.y, agentSpeechText.transform.position.z);
     }
 
     public void MoveToItems()
@@ -98,7 +99,7 @@ public class CameraController : MonoBehaviour
         agentCoroutine = null;
         agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentItemsPos, false));
 
-        //agentSpeechCanvas.transform.position = new Vector3(3f, agentSpeechCanvas.transform.position.y, agentSpeechCanvas.transform.position.z);
+        //agentSpeechText.transform.position = new Vector3(3f, agentSpeechText.transform.position.y, agentSpeechText.transform.position.z);
     }
 
     IEnumerator MoveCamera(float startPos, float endPos)
@@ -154,12 +155,10 @@ public class CameraController : MonoBehaviour
     public void HideAgent()
     {
         agentAi.AgentExits();
-        sound_effect_controller.PlayByeByeSound();
     }
 
     public void ShowAgent()
     {
-        sound_effect_controller.PlayGreetingSound();
         //agentSprite.SetActive(true);
         agentAi.AgentEnters();
     }

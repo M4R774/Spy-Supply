@@ -10,6 +10,7 @@ public class AgentAi : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] float agentSpeed = 2f;
     [SerializeField] TypeWriterEffect typeWriterEffect;
+    [SerializeField] private SoundEffectsController sound_effect_controller;
     void Start()
     {
         if(animator == null)
@@ -71,7 +72,10 @@ public class AgentAi : MonoBehaviour
     IEnumerator AgentPos(float endingPos, bool entering)
     {
         if(!entering)
+        {
              typeWriterEffect.CallExitText();
+             sound_effect_controller.PlayByeByeSound();
+        }
         float timeElapsed = 0;
         float newPos;
         float startPos = transform.position.y;
@@ -88,7 +92,10 @@ public class AgentAi : MonoBehaviour
         agentPosCoroutine = null;
         yield return new WaitForSeconds(2f);
         if(entering)
+        {
             typeWriterEffect.CallEnterText();
+            sound_effect_controller.PlayGreetingSound();
+        }
         yield return null;
     }
 }

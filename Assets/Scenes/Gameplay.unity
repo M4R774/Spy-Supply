@@ -1298,7 +1298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -3.3333335, y: -0.88888884}
+  m_AnchoredPosition: {x: -3, y: -0.88888884}
   m_SizeDelta: {x: 320, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &537239540
@@ -2951,8 +2951,9 @@ MonoBehaviour:
   agentSprite: {fileID: 1251804946}
   agentCaseFilePos: 6
   agentItemsPos: 14
+  agentAi: {fileID: 1251804950}
+  agentSpeechText: {fileID: 1979200888}
   game_status: 0
-  current_mission: {fileID: 0}
   sound_effect_controller: {fileID: 364867009}
   agentInventory: {fileID: 0}
 --- !u!114 &1182686545
@@ -3110,6 +3111,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   agentSpeed: 2
   typeWriterEffect: {fileID: 1979200887}
+  sound_effect_controller: {fileID: 364867009}
 --- !u!1 &1354138144
 GameObject:
   m_ObjectHideFlags: 0
