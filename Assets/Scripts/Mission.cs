@@ -136,6 +136,6 @@ public class Mission
             item_modifiers.TryGetValue(name, out int modifier);
             sum += modifier;
         }
-        return sum;  // TODO needs fixing. Seems to be always zero atm (su 09:27)
+        return sum;
     }
 }
