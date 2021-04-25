@@ -68,8 +68,8 @@ public class Mission
 
     public bool CalculateAndGetMissionResult()
     {
-        float odds = (1 - difficulty / (2 * max_difficulty)) + 
-            SumOfModifiers() * difficulty / (2 * max_difficulty) / 
+        float odds = (1 - (float) difficulty / (2 * max_difficulty)) + 
+            SumOfModifiers() * (float) difficulty / (2 * max_difficulty) / 
             (max_modifier * max_items);
         return odds >= Random.Range(0, 1);
     }
@@ -136,6 +136,6 @@ public class Mission
             item_modifiers.TryGetValue(name, out int modifier);
             sum += modifier;
         }
-        return sum;
+        return sum;  // TODO needs fixing. Seems to be always zero atm (su 09:27)
     }
 }
