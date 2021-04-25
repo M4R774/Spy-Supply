@@ -35,9 +35,9 @@ public class TypeWriterEffect : MonoBehaviour
     /*public GameObject continueButton;
     public GameObject startButton;*/
     // Text index
-    public int textIndex = 0;
+    //public int textIndex = 0;
     // Misc
-    private bool firstTime = false; // Hack to prevent text from disappearing when player leaves interaction collider
+    //private bool firstTime = false; // Hack to prevent text from disappearing when player leaves interaction collider
     void Awake() // Is run before OnEnable()
     {
         //text = texts[0];
@@ -97,7 +97,7 @@ public class TypeWriterEffect : MonoBehaviour
     // This coroutine plays the text in "story" letter by letter
     IEnumerator PlayText()
     {
-        firstTime = true;
+        //firstTime = true;
         text.color = colVisible;
         foreach (char c in story)
         {

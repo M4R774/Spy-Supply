@@ -15,6 +15,9 @@ public class CaseFileAndReport : MonoBehaviour
     public SoundEffectsController sound_effect_controller;
     // Move buttons
     [SerializeField] GameObject moveButtons;
+    // Texts
+    [SerializeField] private GameObject caseFileHeaderText;
+    [SerializeField] private GameObject caseFileBodyText;
     void Start()
     {
         camera_controller = Camera.main.GetComponent<CameraController>();
@@ -24,6 +27,7 @@ public class CaseFileAndReport : MonoBehaviour
     public void ShowCaseFile()
     {
         caseFileAnimator.SetTrigger("opens");
+        StartCoroutine(ShowTextDelay());
 
         CaseFileController case_file_controller = GetComponent<CaseFileController>();
         case_file_controller.UpdateText();
@@ -40,6 +44,8 @@ public class CaseFileAndReport : MonoBehaviour
     public void HideCaseFile()
     {
         caseFileAnimator.SetTrigger("closes");
+        caseFileHeaderText.SetActive(false);
+        caseFileBodyText.SetActive(false);
 
         openedCaseFile.SetActive(false);
         camera_controller.canMove = true;
@@ -72,5 +78,12 @@ public class CaseFileAndReport : MonoBehaviour
     {
         // TODO change the sprite of the fax machine
         throw new NotImplementedException();
+    }
+    IEnumerator ShowTextDelay()
+    {
+        yield return new WaitForSeconds(1.5f);
+        caseFileHeaderText.SetActive(true);
+        caseFileBodyText.SetActive(true);
+        yield return null;
     }
 }

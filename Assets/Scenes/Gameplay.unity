@@ -355,7 +355,6 @@ MonoBehaviour:
   delayBetweenChars: 0.125
   delayAfterPunctuation: 0.25
   delayAfterSentence: 1
-  textIndex: 0
 --- !u!114 &43651031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,7 +511,6 @@ MonoBehaviour:
   delayBetweenChars: 0.125
   delayAfterPunctuation: 0.25
   delayAfterSentence: 1
-  textIndex: 0
 --- !u!114 &118899257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1799,7 +1797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &548168245
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2730,6 +2728,8 @@ MonoBehaviour:
   openedReport: {fileID: 859684485}
   sound_effect_controller: {fileID: 364867009}
   moveButtons: {fileID: 465104733}
+  caseFileHeaderText: {fileID: 548168244}
+  caseFileBodyText: {fileID: 1031931481}
 --- !u!114 &844326555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2761,8 +2761,8 @@ MonoBehaviour:
   header: {fileID: 548168244}
   body: {fileID: 1031931481}
   camera_controller: {fileID: 0}
-  header_text: {fileID: 0}
-  body_text: {fileID: 0}
+  header_text: {fileID: 548168246}
+  body_text: {fileID: 1031931483}
 --- !u!1 &859684485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,7 +2860,6 @@ MonoBehaviour:
   delayBetweenChars: 0.125
   delayAfterPunctuation: 0.25
   delayAfterSentence: 1
-  textIndex: 0
 --- !u!114 &937824026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3080,7 +3079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1031931482
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3297,7 +3296,6 @@ MonoBehaviour:
   delayBetweenChars: 0.125
   delayAfterPunctuation: 0.25
   delayAfterSentence: 1
-  textIndex: 0
 --- !u!114 &1143728986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4006,7 +4004,6 @@ MonoBehaviour:
   delayBetweenChars: 0.125
   delayAfterPunctuation: 0.25
   delayAfterSentence: 1
-  textIndex: 0
 --- !u!114 &1472510685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5454,7 +5451,6 @@ MonoBehaviour:
   delayBetweenChars: 0.125
   delayAfterPunctuation: 0.25
   delayAfterSentence: 1
-  textIndex: 0
 --- !u!114 &1979200888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5611,7 +5607,6 @@ MonoBehaviour:
   delayBetweenChars: 0.125
   delayAfterPunctuation: 0.25
   delayAfterSentence: 1
-  textIndex: 0
 --- !u!114 &2102038409
 MonoBehaviour:
   m_ObjectHideFlags: 0
