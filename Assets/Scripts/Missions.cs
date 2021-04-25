@@ -40,7 +40,7 @@ public static class Missions
             "A giant container ship has spun out of control and blocked Suez Canal, a major passage of global trade. We need to do something! Although... Why does this keep happening?!",
             2,
             "After excruciating hours of digging sand with a tiny excavator, our agent, and his trusty $BEST_ITEM unblocked the ship and secured the billion-dollar merchandise aboard.",
-            "Our agent was caught trying to bribe and official with their $WORST_ITEM and was promptly escorted out of the target country. Disappointing, clearly more anti-corruption training is needed for our personnel.",
+            "Our agent was caught trying to bribe an official with their $WORST_ITEM and was promptly escorted out of the target country. Disappointing, clearly more anti-corruption training is needed for our personnel.",
             "desert",
             new Dictionary<string, int>
             {
