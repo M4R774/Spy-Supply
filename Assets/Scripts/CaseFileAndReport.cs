@@ -18,6 +18,7 @@ public class CaseFileAndReport : MonoBehaviour
     // Texts
     [SerializeField] private GameObject caseFileHeaderText;
     [SerializeField] private GameObject caseFileBodyText;
+    [SerializeField] private GameObject caseFileImage;
     void Start()
     {
         camera_controller = Camera.main.GetComponent<CameraController>();
@@ -85,6 +86,7 @@ public class CaseFileAndReport : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         caseFileHeaderText.SetActive(true);
         caseFileBodyText.SetActive(true);
+        caseFileImage.SetActive(true);
         yield return null;
     }
 }
