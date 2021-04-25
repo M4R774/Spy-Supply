@@ -145,7 +145,7 @@ public class CameraController : MonoBehaviour
         HideAgent();
         MoveToCaseFile();
         FaxMissionReport();
-  }
+    }
 
     public void FaxMissionReport()
     {
