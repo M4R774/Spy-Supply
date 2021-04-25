@@ -15,7 +15,6 @@ public class CaseFileController : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("jippii");
         camera_controller = cameraObject.GetComponent<CameraController>(); 
         header_text = header.GetComponent<TextMeshProUGUI>();
         body_text = body.GetComponent<TextMeshProUGUI>();

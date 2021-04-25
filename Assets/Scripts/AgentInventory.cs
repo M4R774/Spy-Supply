@@ -16,7 +16,7 @@ public class AgentInventory : MonoBehaviour
         {
             for (int y = grid.GetHeight() - 1; y >= 0; y--)
             {
-                Debug.Log("Y: " + y);
+                //Debug.Log("Y: " + y);
                 Instantiate(slot, GetWorldPosition(x, y) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("AgentInventorySlots").transform);
             }
         }

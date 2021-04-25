@@ -5,7 +5,10 @@ using UnityEngine;
 public static class Missions
 {
     public static List<Mission> missions = new List<Mission>();
-
+    
+    private static System.Random rng = new System.Random();
+    private static int mission_counter = 0;
+    
     static Missions()
     {
         Mission mission = new Mission(
@@ -168,10 +171,34 @@ public static class Missions
             }
         );
         missions.Add(mission);
+        missions.Shuffle();
     }
 
     public static Mission GetRandomMission()
     {
         return missions[Random.Range(0, missions.Count)];
+    }
+
+    public static Mission GetNextMission()
+    {
+        mission_counter++;
+        if (mission_counter >= missions.Count)
+        {
+            mission_counter = 0;
+        }
+        return missions[mission_counter];
+    }
+
+    public static void Shuffle<T>(this IList<T> list)
+    {
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
     }
 }

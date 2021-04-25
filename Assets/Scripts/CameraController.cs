@@ -48,7 +48,7 @@ public class CameraController : MonoBehaviour
         flipX = agentSprite.GetComponent<SpriteRenderer>().flipX;
 
         // Init mission
-        current_mission = Missions.GetRandomMission();
+        current_mission = Missions.GetNextMission();
 
         agentAi = agentSprite.GetComponent<AgentAi>();
     }
@@ -72,7 +72,7 @@ public class CameraController : MonoBehaviour
         foreach(GameObject item in current_mission.luggage) {
             Destroy(item);
         }
-        current_mission = Missions.GetRandomMission();
+        current_mission = Missions.GetNextMission();
     }
 
     public void MoveToCaseFileByPlayer()
