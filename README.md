@@ -2,6 +2,8 @@
 
 Ludum Dare 48 gamejam repo. Lojo = Lohja in Swedish, a place where we physically crunch.
 
+![alt text](screenshot1.png "Title")
+
 ## The game
 
 Spy Supply sets the player as a quartermaster of a special operations agent. It's your task to pick the right equipment for the right task. Are you up for the challenge when the trouble gets deeper and deeper?
