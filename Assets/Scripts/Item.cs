@@ -7,7 +7,22 @@ public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 {
     CanvasGroup group;
     Vector3 originalPosition;
-    // Start is called before the first frame update
+    
+    public string item_name;
+    [TextArea(5,10)] public string description;
+    
+    Item(string name_parameter, string description_parameter)
+    {
+        item_name = name_parameter;
+        description = description_parameter;
+    }
+
+    // For testing
+    Item()
+    {
+        item_name = "testi itemi";
+        description = "rakentajalle ei annettu parametreja joten luotiin vain tyhjä itemi";
+    }
 
     private void Awake()
     {
@@ -20,7 +35,7 @@ public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("Began drag");
+        // Debug.Log("Began drag");
         originalPosition = transform.position;
         group.blocksRaycasts = false;
         group.alpha = 0.6f;
@@ -35,7 +50,7 @@ public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         if (hit.collider != null)
         {
             collidedObject = hit.collider.gameObject;
-            Debug.Log("Collided with " + collidedObject.name);
+            // Debug.Log("Collided with " + collidedObject.name);
             if (!collidedObject.name.Contains("Slot"))
             {
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition + new Vector3(0, 1, 0);
@@ -52,25 +67,8 @@ public class Item : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         group.alpha = 1f;
     }
 
-    public string name;
-    [TextArea(5,10)]
-    public string description;
-
-    Item(string name_parameter, string description_parameter)
-    {
-        name = name_parameter;
-        description = description_parameter;
-    }
-
-    // For testing
-    Item()
-    {
-        name = "testi itemi";
-        description = "rakentajalle ei annettu parametreja joten luotiin vain tyhjä itemi";
-    }
-
     public string GetName()
     {
-        return name;
+        return item_name;
     }
 }

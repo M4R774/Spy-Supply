@@ -166,7 +166,7 @@ public class CameraController : MonoBehaviour
 
     public void FaxMissionReport()
     {
-        reportAnimator.SetTrigger("prints");
+        StartCoroutine("faxAnimationTriggerDelay");
         sound_effect_controller.PlayIncomingFaxSound();
         game_status = gameState.mission_debriefing;
     }
@@ -181,5 +181,11 @@ public class CameraController : MonoBehaviour
     {
         //agentSprite.SetActive(true);
         agentAi.AgentEnters();
+    }
+
+    IEnumerator faxAnimationTriggerDelay()
+    {
+        yield return new WaitForSeconds(5);
+        reportAnimator.SetTrigger("prints");
     }
 }
