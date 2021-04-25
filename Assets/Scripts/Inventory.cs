@@ -5,9 +5,9 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     Grid2D<GameObject> grid;
-  public GameObject slot;
+    public GameObject slot;
 
-  public List<GameObject> prefabs;
+    public List<GameObject> prefabs;
     int dragValue;
 
     int value;
@@ -24,6 +24,16 @@ public class Inventory : MonoBehaviour
                 Instantiate(grid.GetValue(x, y), GetWorldPosition(x, y) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("Inventory").transform);
             }
         }
+    }
+
+    private void AddItemToEmptySlot(GameObject item) {
+        grid.SetFirstEmptyValue(item);
+    }
+
+    private void AddRandomItemToEmptySlot()
+    {
+        GameObject random_item = prefabs[Random.Range(0, prefabs.Count - 1)];
+        grid.SetFirstEmptyValue(random_item);
     }
 
     private Vector3 GetWorldPosition(int x, int y)
