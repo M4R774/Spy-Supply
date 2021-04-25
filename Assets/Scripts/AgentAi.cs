@@ -37,7 +37,7 @@ public class AgentAi : MonoBehaviour
 
         Color32 enterColor = new Color (255,255,255,255);
         agentColorCoroutine = StartCoroutine(AgentColor(enterColor));
-        agentPosCoroutine = StartCoroutine(AgentPos(2.1f, true));
+        agentPosCoroutine = StartCoroutine(AgentPos(1.56f, true));
     }
     public void AgentExits()
     { 

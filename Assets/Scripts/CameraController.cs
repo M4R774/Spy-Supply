@@ -56,13 +56,13 @@ public class CameraController : MonoBehaviour
     {
         if(canMove)
         {
-            if(Input.GetKeyDown(KeyCode.A) && game_status == gameState.mission_preparation)
+            if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                MoveToCaseFile();
+                MoveToCaseFileByPlayer();
             }
-            else if(Input.GetKeyDown(KeyCode.D) && game_status == gameState.mission_preparation)
+            else if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
-                MoveToItems();
+                MoveToItemsByPlayer();
             }
         }
     }
@@ -75,6 +75,23 @@ public class CameraController : MonoBehaviour
         current_mission = Missions.GetRandomMission();
     }
 
+    public void MoveToCaseFileByPlayer()
+    {
+        if (game_status == gameState.mission_preparation)
+        {
+            MoveToCaseFile();
+        }
+    }
+
+    public void MoveToItemsByPlayer()
+    {
+        if (game_status == gameState.mission_preparation)
+        {
+            MoveToItems();
+        }
+    }
+
+
     public void MoveToCaseFile()
     {
         StopAllCoroutines();
@@ -84,21 +101,22 @@ public class CameraController : MonoBehaviour
 
         agentCoroutine = null;
         agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentCaseFilePos, true));
-
-        //agentSpeechText.transform.position = new Vector3(-3f, agentSpeechText.transform.position.y, agentSpeechText.transform.position.z);
     }
 
     public void MoveToItems()
     {
-        StopAllCoroutines();
-        sound_effect_controller.PlayFootstepSound();
-        cameraCoroutine = null;
-        cameraCoroutine = StartCoroutine(MoveCamera(cam.transform.position.x, itemsPos));
+        if(game_status != gameState.incoming_mission)
+        {
+            StopAllCoroutines();
+            sound_effect_controller.PlayFootstepSound();
+            cameraCoroutine = null;
+            cameraCoroutine = StartCoroutine(MoveCamera(cam.transform.position.x, itemsPos));
 
-        agentCoroutine = null;
-        agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentItemsPos, false));
+            agentCoroutine = null;
+            agentCoroutine = StartCoroutine(MoveAgent(agentSprite.transform.position.x, agentItemsPos, false));
 
-        //agentSpeechText.transform.position = new Vector3(3f, agentSpeechText.transform.position.y, agentSpeechText.transform.position.z);
+            //agentSpeechText.transform.position = new Vector3(3f, agentSpeechText.transform.position.y, agentSpeechText.transform.position.z);
+        }
     }
 
     IEnumerator MoveCamera(float startPos, float endPos)

@@ -11,7 +11,7 @@ public static class Missions
         Mission mission = new Mission(
             "Rumble In The Jungle",
             "Our sources tell disturbing news from the deep jungle. Foreign intelligence agencies have sold guns to the enemies of our allies. Intercept the next shipment!",
-            2,
+            4,
             "Our agent tracked down and disarmed the arms dealers! $BEST_ITEM proved to be especially helpful. Local people were conflicted but they had no say in the matter.",
             "Few months later, lone traveller brings news that a foreigner had disappeared in bushes after a firefight. Only $WORST_ITEM had been found...",
             new Dictionary<string, int>
@@ -57,9 +57,9 @@ public static class Missions
         mission = new Mission(
             "Everybody, get down!",
             "Large, international bank has bought a penetration-test from our agency into its main building in London City. Horrible idea, but they got deep pockets.",
-            2,
-            "Video footage from security cameras showed our agent marching to the desk and showing the clerk $BEST_ITEM. Distraught teller filled agent’s briefcase with cash quickly. When shown the footage, the bank’s chair members were perplexed…",
-            "A thorough research done, a careful plan and calm execution with no shots fired. A successful bank robbery! Or would have been if it were not for $WORST_ITEM…",
+            3,
+            "Video footage from security cameras showed our agent marching to the desk and showing the clerk $BEST_ITEM. Distraught teller filled agent’s briefcase with cash quickly. When shown the footage, the bank’s chair members were perplexed...",
+            "A thorough research done, a careful plan and calm execution with no shots fired. A successful bank robbery! Or would have been if it were not for $WORST_ITEM...",
             new Dictionary<string, int>
             {
                 {"Helmet",     1},
@@ -149,8 +149,8 @@ public static class Missions
         mission = new Mission(
             "Presidential threat",
             "Disturbing call from the Whitehouse: The president is under a great threat, they say. Kidnapped?! Godspeed, agent.",
-            1,
-            "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. You and your $BEST_ITEM appered sharp, however, and Mr. President was impressed",
+            5,
+            "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. You and your $BEST_ITEM appered sharp, however, and Mr. President was impressed.",
             "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. You and your $WORST_ITEM boarded the next flight home with a soda in hand.",
             new Dictionary<string, int>
             {
