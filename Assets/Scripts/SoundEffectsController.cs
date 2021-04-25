@@ -75,7 +75,7 @@ public class SoundEffectsController : MonoBehaviour
 
     public void PlayAgentThanksSound()
     {
-        agentAudioSource.clip = agentThanksClips[Random.Range(0, agentThanksClips.Count - 1)];
+        agentAudioSource.clip = agentThanksClips[Random.Range(0, agentThanksClips.Count)];
         agentAudioSource.Play();
     }
 }
