@@ -49,6 +49,7 @@ public class AgentAi : MonoBehaviour
     public void AgentBarks()
     {
         typeWriterEffect.CallBarkText();
+        sound_effect_controller.PlayAgentThanksSound();
     }
     IEnumerator AgentColor(Color32 endingColor)
     {
