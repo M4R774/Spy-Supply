@@ -7,3 +7,7 @@ Ludum Dare 48 gamejam repo. Lojo = Lohja in Swedish, a place where we physically
 - Ludum dare link: https://ldjam.com/events/ludum-dare/48/$233514
 - itch.io link: **TODO**
 - How to setup vscode with unity properly: **TODO**
+
+Agent Armorer sets the player as a quartermaster of a special operations agent. It's your task to pick the right equipment for the right task. Are you up for the challenge when the trouble gets deeper and deeper?
+
+Made as part of the 48th Ludum Dare gamejam.

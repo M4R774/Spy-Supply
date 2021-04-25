@@ -79,7 +79,7 @@ public class Mission
     public string GetBestItem()
     {
         int BestItemModifier = - max_modifier;
-        string BestItemName = "defaultBestItem";
+        string BestItemName = "Guts";
 
         foreach(GameObject item_object in luggage)
         {   
@@ -100,7 +100,7 @@ public class Mission
     public string GetWorstItem()
     {
         int WorstItemModifier = - max_modifier;
-        string WorstItemName = "defaultWorstItem";
+        string WorstItemName = "Guts";
 
         foreach(GameObject item_object in luggage)
         {
