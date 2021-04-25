@@ -47,6 +47,7 @@ public class CaseFileAndReport : MonoBehaviour
         caseFileAnimator.SetTrigger("closes");
         caseFileHeaderText.SetActive(false);
         caseFileBodyText.SetActive(false);
+        caseFileImage.SetActive(false);
 
         openedCaseFile.SetActive(false);
         camera_controller.canMove = true;
