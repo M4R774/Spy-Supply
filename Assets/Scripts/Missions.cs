@@ -159,7 +159,7 @@ public static class Missions
             "Presidential threat",
             "Disturbing call from the Whitehouse: The president is under a great threat, they say. Kidnapped?! Godspeed, agent.",
             5,
-            "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. Our agent and their $BEST_ITEM appered sharp, however, and Mr. President was impressed.",
+            "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. Our agent and their $BEST_ITEM appeared sharp, however, and Mr. President was impressed.",
             "Turns out Mr. President had mixed up which button calls for international aid and which calls for Diet-Coke. Our agent and their $WORST_ITEM boarded the next flight home with a soda in hand.",
             "whitehouse.png",
             new Dictionary<string, int>

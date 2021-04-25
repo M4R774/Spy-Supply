@@ -53,7 +53,7 @@ public class CaseFileAndReport : MonoBehaviour
     }
     public void ShowReport()
     {
-        if (camera_controller.game_status == gameState.mission_debriefing)
+        if (camera_controller.game_status == gameState.mission_debriefing && reportAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "ReportIHasPrint")
         {
             openedReport.SetActive(true);
             camera_controller.canMove = false;
@@ -72,6 +72,7 @@ public class CaseFileAndReport : MonoBehaviour
         sound_effect_controller.PlayPaperSound();
         // RemoveOldReport();
         moveButtons.SetActive(false);
+        reportAnimator.SetTrigger("noprint");
     }
 
     private void RemoveOldReport()
