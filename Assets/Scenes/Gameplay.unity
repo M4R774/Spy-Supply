@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.24647513, g: 0.28234503, b: 0.34570262, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1110,7 +1110,7 @@ MonoBehaviour:
     type: 3}
   paperAudioClip: {fileID: 8300000, guid: 4219a5d24ecd6a44eb4ed986be82f03d, type: 3}
   footstepAudioClip: {fileID: 8300000, guid: e34545459bde8ac46b39ad11460c86e1, type: 3}
-  briefingAudioClip: {fileID: 8300000, guid: 8b489abf2f01913418ae0c242ccc4a5e, type: 3}
+  briefingAudioClip: {fileID: 8300000, guid: d3e8615f062b8b34291fb7ded8ef3a04, type: 3}
   greetingAudioClip: {fileID: 8300000, guid: 065339b227da5bf44942f9b57551dd71, type: 3}
   byebyeAudioClip: {fileID: 8300000, guid: 492b691d7be1e8f48984cb8dcb0fa413, type: 3}
 --- !u!4 &364867010
