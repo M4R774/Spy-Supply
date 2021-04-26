@@ -121,7 +121,7 @@ public class Grid2D<TGridObject>
     public void SetFirstEmptyValue(TGridObject value)
     {
         GetFirstEmptySlot(out int x, out int y);
-        Debug.Log(x + ":" + y);
+        // Debug.Log(x + ":" + y);
         if (x == -1) {
             SetValue(x, y, value);
         }

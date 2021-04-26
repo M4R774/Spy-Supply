@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AgentInventory : MonoBehaviour
 {
-    Grid2D<GameObject> grid;
+    public Grid2D<GameObject> grid;
     List<GameObject> items;
     public GameObject slot;
 
