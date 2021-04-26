@@ -184,7 +184,7 @@ public class CameraController : MonoBehaviour
 
     IEnumerator faxAnimationTriggerDelay()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         reportAnimator.SetTrigger("prints");
     }
 }
