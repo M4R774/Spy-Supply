@@ -12,26 +12,39 @@ public class Inventory : MonoBehaviour
   // Start is called before the first frame update
     void Start()  
     {
-        grid = new Grid2D<GameObject>(10, 2, 1.6f, new Vector3(12, -4.55f), (Grid2D<GameObject> g, int x, int y) => prefabs[Random.Range(0, prefabs.Count)]);
+        grid = new Grid2D<GameObject>(10, 2, 1.6f, new Vector3(12, -4.55f), (Grid2D<GameObject> g, int x, int y) => null);
         for (int x = 0; x < grid.GetWidth(); x++)
         {
-        for (int y = grid.GetHeight() - 1; y >= 0; y--)
+            for (int y = grid.GetHeight() - 1; y >= 0; y--)
             {
                 Instantiate(slot, GetWorldPosition(x, y) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("InventorySlots").transform);
-                Instantiate(grid.GetValue(x, y), GetWorldPosition(x, y) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("Inventory").transform);
+                //Instantiate(grid.GetValue(x, y), GetWorldPosition(x, y) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("Inventory").transform);
             }
         }
+        BulkAddRandomItemToEmptySlot(2);
     }
 
     private void AddItemToEmptySlot(GameObject item) {
         grid.SetFirstEmptyValue(item);
     }
 
-    private void AddRandomItemToEmptySlot()
+    public void AddRandomItemToEmptySlot()
     {
-        GameObject random_item = prefabs[Random.Range(0, prefabs.Count)];
-        grid.SetFirstEmptyValue(random_item);
+        GameObject random_item_prefab = prefabs[Random.Range(0, prefabs.Count)];
+        grid.GetFirstEmptySlot(out int x, out int y);
+
+        GameObject new_item = Instantiate(random_item_prefab, grid.GetWorldPosition(x, y) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("Inventory").transform);
+        grid.SetValue(x, y, new_item);
     }
+
+    public void BulkAddRandomItemToEmptySlot(int number_of_items_to_be_added)
+    {
+        for (int i = 0; i < number_of_items_to_be_added; i++)
+        {
+            AddRandomItemToEmptySlot();
+        }
+    }
+
 
     private Vector3 GetWorldPosition(int x, int y)
     {

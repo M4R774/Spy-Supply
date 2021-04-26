@@ -14,6 +14,8 @@ public class ReportFileController : MonoBehaviour
     TextMeshProUGUI header_text;
     TextMeshProUGUI body_text;
 
+    [SerializeField] private Inventory inventory;
+
     void Awake()
     {
         camera_controller = cameraObject.GetComponent<CameraController>();
@@ -71,7 +73,8 @@ public class ReportFileController : MonoBehaviour
             mood = mood+" "+real_mood;
         }
         body_text.text = camera_controller.current_mission.GetMissionResultText(mission_success)+mood;
-        
+
         // TODO: Give option to choose reward
+        inventory.BulkAddRandomItemToEmptySlot(2);
     }
 }

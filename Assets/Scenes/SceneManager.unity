@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -437,8 +437,6 @@ MonoBehaviour:
   skipToGameplay: 0
   sceneLoader: {fileID: 4280528189625340165, guid: 28b85760d292b094088f7dcefa3f1767,
     type: 3}
-  numberOfWonMissions: 0
-  numberOfFailedMissions: 0
 --- !u!81 &440383823
 AudioListener:
   m_ObjectHideFlags: 0

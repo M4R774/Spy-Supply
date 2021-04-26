@@ -34,7 +34,7 @@ public class Grid2D<TGridObject>
         {
             for (int y = 0; y < gridArray.GetLength(1); y++)
             {
-                gridArray[x, y] = createGridObject(this, x, y);
+                // gridArray[x, y] = createGridObject(this, x, y);
             }
         }
 
@@ -52,7 +52,7 @@ public class Grid2D<TGridObject>
 
         OnGridValueChanged += (object sender, OnGridValueChangedEventArgs eventArgs) =>
         {
-            debugTextArray[eventArgs.x, eventArgs.y].text = gridArray[eventArgs.x, eventArgs.y].ToString();
+            // debugTextArray[eventArgs.x, eventArgs.y].text = gridArray[eventArgs.x, eventArgs.y].ToString();
         };
     }
 
@@ -70,7 +70,7 @@ public class Grid2D<TGridObject>
     public int GetHeight() {
         return this.height;
     }
-    private Vector3 GetWorldPosition(int x, int y)
+    public Vector3 GetWorldPosition(int x, int y)
     {
         return new Vector3(x, y) * cellSize + originPosition;
     }
@@ -80,14 +80,16 @@ public class Grid2D<TGridObject>
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
             gridArray[x, y] = value;
-            if (OnGridValueChanged != null) OnGridValueChanged(this, new OnGridValueChangedEventArgs { x = x, y = y });
+            if (OnGridValueChanged != null)
+            {
+                OnGridValueChanged(this, new OnGridValueChangedEventArgs { x = x, y = y });
+            }
         }
     }
 
     public void SetValue(Vector3 worldPosition, TGridObject value)
     {
-        int x, y;
-        GetXY(worldPosition, out x, out y);
+        GetXY(worldPosition, out int x, out int y);
         SetValue(x, y, value);
     }
 
@@ -119,10 +121,10 @@ public class Grid2D<TGridObject>
     public void SetFirstEmptyValue(TGridObject value)
     {
         GetFirstEmptySlot(out int x, out int y);
+        Debug.Log(x + ":" + y);
         if (x == -1) {
             SetValue(x, y, value);
         }
-        
     }
 
     public void GetFirstEmptySlot(out int out_x, out int out_y) {
@@ -133,6 +135,7 @@ public class Grid2D<TGridObject>
                 if (GetValue(x,y) == null) {
                     out_x = x;
                     out_y = y;
+                    return;
                 }
             }
         }

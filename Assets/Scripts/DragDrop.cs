@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IDropHandler
+public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     CanvasGroup group;
     Vector3 originalPosition;
-
 
     private void Awake() {
         group = GetComponent<CanvasGroup>();
@@ -33,23 +32,11 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
         Physics.Raycast(transform.position + new Vector3(0, 0, -1), transform.TransformDirection(Vector3.forward), out hit, 10f);
         GameObject collidedObject;
         if (hit.collider != null) {
-        collidedObject = hit.collider.gameObject;
-        //Debug.Log("Collided with " + collidedObject.name);
-        if (!collidedObject.name.Contains("Slot"))
-        {
-            // eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
-        }
-        } else {
-            // eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = originalPosition;
-        }
-        
-        //Debug.Log("Ended drag");
+            collidedObject = hit.collider.gameObject;
+        } 
+
         group.blocksRaycasts = true;
         group.alpha = 1f;
-    }
-
-    public void OnDrop(PointerEventData eventData)
-    {
-        //Debug.Log("Ended drag");
+        //
     }
 }

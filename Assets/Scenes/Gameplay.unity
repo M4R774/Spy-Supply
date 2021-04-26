@@ -2826,6 +2826,7 @@ MonoBehaviour:
   cameraObject: {fileID: 1182686540}
   header: {fileID: 1676464284}
   body: {fileID: 831279294}
+  inventory: {fileID: 292063083}
 --- !u!114 &844326556
 MonoBehaviour:
   m_ObjectHideFlags: 0

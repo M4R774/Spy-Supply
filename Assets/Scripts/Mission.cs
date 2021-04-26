@@ -141,6 +141,11 @@ public class Mission
             item_modifiers.TryGetValue(name, out int modifier);
             sum += modifier;
         }
+        if (luggage.Count < 3)
+        {
+            sum += 3 - luggage.Count;
+        }
+
         return sum;
     }
 }
