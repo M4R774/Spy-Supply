@@ -146,7 +146,7 @@ public class Mission
         }
         if (luggage.Count < 3)
         {
-            sum += 3 - luggage.Count;
+            sum -= 3 - luggage.Count;
         }
 
         return sum;
