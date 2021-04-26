@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    Grid2D<GameObject> grid;
+    public Grid2D<GameObject> grid;
     public GameObject slot;
 
     public List<GameObject> prefabs;
