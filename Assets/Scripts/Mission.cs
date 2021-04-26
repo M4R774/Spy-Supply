@@ -136,10 +136,13 @@ public class Mission
         int sum = 0;
         foreach(GameObject item_object in luggage)
         {
-            Item item = item_object.GetComponent<Item>();
-            string name = item.GetName();
-            item_modifiers.TryGetValue(name, out int modifier);
-            sum += modifier;
+            if (item_object != null)
+            {
+                Item item = item_object.GetComponent<Item>();
+                string name = item.GetName();
+                item_modifiers.TryGetValue(name, out int modifier);
+                sum += modifier;
+            }
         }
         if (luggage.Count < 3)
         {

@@ -75,6 +75,6 @@ public class ReportFileController : MonoBehaviour
         body_text.text = camera_controller.current_mission.GetMissionResultText(mission_success)+mood;
 
         // TODO: Give option to choose reward
-        inventory.BulkAddRandomItemToEmptySlot(2);
+        inventory.BulkAddRandomItemToEmptySlot(1);
     }
 }

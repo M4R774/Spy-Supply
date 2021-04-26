@@ -21,7 +21,7 @@ public class Inventory : MonoBehaviour
                 //Instantiate(grid.GetValue(x, y), GetWorldPosition(x, y) + new Vector3(grid.cellSize, grid.cellSize) * .5f, Quaternion.identity, GameObject.Find("Inventory").transform);
             }
         }
-        BulkAddRandomItemToEmptySlot(2);
+        BulkAddRandomItemToEmptySlot(7);
     }
 
     private void AddItemToEmptySlot(GameObject item) {
