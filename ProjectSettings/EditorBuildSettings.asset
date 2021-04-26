@@ -10,14 +10,11 @@ EditorBuildSettings:
     guid: db0b7574121705b4dbf7a5a597b8a1dd
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
-    guid: 9817093449cd02349b90433ad5cc00df
+    guid: 80e24c6fbc9bb054a8cda76af011c644
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: bf8cb16b09e8f7f46aec37ed0b865ec6
   - enabled: 1
-    path: Assets/Scenes/Win.unity
-    guid: f4d66c40fd7933747aa173e47daf1062
-  - enabled: 1
-    path: Assets/Scenes/Failed.unity
-    guid: eef9e56c160ce644b9cdfdf64db26204
+    path: Assets/Scenes/Ending.unity
+    guid: 9817093449cd02349b90433ad5cc00df
   m_configObjects: {}

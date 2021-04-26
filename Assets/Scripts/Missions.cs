@@ -222,7 +222,7 @@ public static class Missions
         mission = new Mission(
             "Suppress the Opposition",
             "New political party is threatening the cohesion of our Empire. \"Take care\" of the opposition leader to maintain the status quo. She was last seen in Siberia. You will departure at zero-seven-hundred hours. ",
-            3,
+            5,
             "The opposition leader could not escape from our agents $BEST_ITEM and was easily dealt with. Peace has returned to the Empire. ",
             "The tenuous $WORST_ITEM did not help our agent this time and the opposition leader escaped. The integrity of our Empire is compromised. ",
             "siberia",

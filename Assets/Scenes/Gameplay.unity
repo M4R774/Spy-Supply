@@ -2718,6 +2718,7 @@ GameObject:
   - component: {fileID: 844326554}
   - component: {fileID: 844326556}
   - component: {fileID: 844326555}
+  - component: {fileID: 844326557}
   m_Layer: 0
   m_Name: CaseFileAndReport
   m_TagString: Untagged
@@ -2809,6 +2810,7 @@ MonoBehaviour:
   caseFileHeaderText: {fileID: 548168244}
   caseFileBodyText: {fileID: 1031931481}
   caseFileImage: {fileID: 622279837}
+  scene_loader: {fileID: 0}
 --- !u!114 &844326555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2844,6 +2846,18 @@ MonoBehaviour:
   header_text: {fileID: 548168246}
   body_text: {fileID: 1031931483}
   caseimage_image: {fileID: 622279839}
+--- !u!114 &844326557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844326550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea1c71b9901d3c4c9ef5622550e8a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &859684485
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,10 +19,13 @@ public class CaseFileAndReport : MonoBehaviour
     [SerializeField] private GameObject caseFileHeaderText;
     [SerializeField] private GameObject caseFileBodyText;
     [SerializeField] private GameObject caseFileImage;
+    [SerializeField] private SceneLoader scene_loader;
+
     void Start()
     {
         camera_controller = Camera.main.GetComponent<CameraController>();
         moveButtons.SetActive(false);
+        scene_loader = GetComponent<SceneLoader>();
     }
 
     public void ShowCaseFile()
@@ -66,6 +69,11 @@ public class CaseFileAndReport : MonoBehaviour
     }
     public void HideReport()
     {
+        if (Stats.ThePlayerHasLost())
+        {
+            scene_loader.LoadEnding();
+        }
+
         openedReport.SetActive(false);
         camera_controller.canMove = true;
         camera_controller.game_status = gameState.incoming_mission;

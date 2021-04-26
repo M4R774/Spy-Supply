@@ -11,21 +11,37 @@ public class SceneLoader : MonoBehaviour
     public void LoadGame() // Loads gameplay and unloads main menu
     {
         SceneManager.LoadSceneAsync("Gameplay", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("MainMenu");
+        
+        if (SceneManager.GetSceneByBuildIndex(1).isLoaded)
+        {
+            SceneManager.UnloadSceneAsync("MainMenu");
+        }
+
+        if (SceneManager.GetSceneByBuildIndex(3).isLoaded)
+        {
+            SceneManager.UnloadSceneAsync("Ending");
+        }
+        
+        Stats.ResetStats();
     }
     public void LoadMainMenu() // Loads main menu and unloads gameplay
     {
         SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("Gameplay");
+
+        if (SceneManager.GetSceneByBuildIndex(2).isLoaded)
+        {
+            SceneManager.UnloadSceneAsync("Gameplay");
+        }
+
+        if (SceneManager.GetSceneByBuildIndex(3).isLoaded)
+        {
+            SceneManager.UnloadSceneAsync("Ending");
+        }
     }
-    public void LoadWin()
+
+    public void LoadEnding()
     {
-        SceneManager.LoadSceneAsync("Win", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("Gameplay");
-    }
-    public void LoadFailed()
-    {
-        SceneManager.LoadSceneAsync("Failed", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Ending", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("Gameplay");
     }
 }

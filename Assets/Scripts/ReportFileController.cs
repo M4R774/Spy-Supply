@@ -56,6 +56,7 @@ public class ReportFileController : MonoBehaviour
 
         if (mission_success)
         {
+            Stats.MissionSuccessful();
             header_text.text = "MISSION SUCCESSFUL";
             int moodkey = (int) Math.Floor(mission_odds * 10);
             possible_moods.TryGetValue(moodkey, out string real_mood);
@@ -63,13 +64,14 @@ public class ReportFileController : MonoBehaviour
         }
         else
         {
+            Stats.MissionFailed();
             header_text.text = "MISSION FAILED";
             int moodkey = (int) Math.Ceiling(mission_odds * -10);
             possible_moods.TryGetValue(moodkey, out string real_mood);
             mood = mood+" "+real_mood;
         }
         body_text.text = camera_controller.current_mission.GetMissionResultText(mission_success)+mood;
-
+        
         // TODO: Give option to choose reward
     }
 }
