@@ -32,7 +32,9 @@ public static class Missions
                 {"Salt Shaker", 0},
                 {"Skis", -3},
                 {"Pistol", 3},
-                {"Shovel", 1}
+                {"Shovel", 1},
+                {"Sunhat", 3},
+                {"Map", 2}
             }
         );
         missions.Add(mission);
@@ -58,7 +60,9 @@ public static class Missions
                 {"Salt Shaker", 2},
                 {"Skis", -2},
                 {"Pistol", -1},
-                {"Shovel", 3}
+                {"Shovel", 3},
+                {"Sunhat", 3},
+                {"Map", 0}
             }
         );
         missions.Add(mission);
@@ -84,7 +88,9 @@ public static class Missions
                 {"Salt Shaker",         1},
                 {"Skis", -2},
                 {"Pistol", 3},
-                {"Shovel", 1}
+                {"Shovel", 1},
+                {"Sunhat", 0},
+                {"Map", -1}
             }
         );
         missions.Add(mission);
@@ -110,7 +116,9 @@ public static class Missions
                 {"Salt Shaker",         0},
                 {"Skis",  3},
                 {"Pistol", -1},
-                {"Shovel", 2}
+                {"Shovel", 2},
+                {"Sunhat", -3},
+                {"Map", 3}
             }
         );
         missions.Add(mission);
@@ -136,7 +144,9 @@ public static class Missions
                 {"Salt Shaker",        -1},
                 {"Skis", -3},
                 {"Pistol", -2},
-                {"Shovel", 3}
+                {"Shovel", 3},
+                {"Sunhat", 2},
+                {"Map", 1}
             }
         );
         missions.Add(mission);
@@ -162,7 +172,9 @@ public static class Missions
                 {"Salt Shaker",         2},
                 {"Skis",  0},
                 {"Pistol", 0},
-                {"Shovel", -1}
+                {"Shovel", -1},
+                {"Sunhat", 0},
+                {"Map", 0}
             }
         );
         missions.Add(mission);
@@ -188,7 +200,9 @@ public static class Missions
                 {"Salt Shaker", -3},
                 {"Skis", -3},
                 {"Pistol", 2},
-                {"Shovel", -3}
+                {"Shovel", -3},
+                {"Sunhat", -1},
+                {"Map", 0}
             }
         );
         missions.Add(mission);
@@ -214,7 +228,9 @@ public static class Missions
                 {"Salt Shaker", 0},
                 {"Skis", -3},
                 {"Pistol", 3},
-                {"Shovel", 1}
+                {"Shovel", 1},
+                {"Sunhat", -1},
+                {"Map", 0}
             }
         );
         missions.Add(mission);
@@ -240,7 +256,37 @@ public static class Missions
                 {"Salt Shaker", 0},
                 {"Skis", 3},
                 {"Pistol", 3},
-                {"Shovel", -3}
+                {"Shovel", -3},
+                {"Sunhat", -3},
+                {"Map", 1}
+            }
+        );
+        missions.Add(mission);
+
+        mission = new Mission(
+            "Tempest in a teacup",
+            "Last month a microfilm containing plans for hi-tech submarine tracking system was stolen from our research facilities. Our intelligence reports that the microfilm is being sold at black market in Cairo, Egypt. Go there and retrieve the microfilm!",
+            5,
+            "Our agent was not the only one hunting the microfilm. A skirmish broke out with foreign agents, but luckily our agent was well prepared and with his $BEST_ITEM the situation stayed under control in this difficult environment.",
+            "Our agent was not the only one hunting the microfilm. An especially attractive foreign spy seduced our agent and stole the microfilm. $WORST_ITEM did not help our agents broken heart. ",
+            "desert",
+            new Dictionary<string, int>
+            {
+                {"Helmet", 1},
+                {"Goggles", 2},
+                {"Night Vision Goggles", 2},
+                {"Radio", 3},
+                {"Boots", 1},
+                {"Snowshoes", -3},
+                {"Camo pants", 0},
+                {"Scope", 0},
+                {"Poison Pill", -3},
+                {"Salt Shaker", -3},
+                {"Skis", -3},
+                {"Pistol", 2},
+                {"Shovel", -1},
+                {"Sunhat", 3},
+                {"Map", 1}
             }
         );
         missions.Add(mission);
